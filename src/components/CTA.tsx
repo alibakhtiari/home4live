@@ -27,7 +27,7 @@ const CTA: React.FC<CTAProps> = ({
           <Button 
             variant="default" 
             size="lg" 
-            className="bg-brand-orange hover:bg-orange-600 text-white px-8"
+            className="bg-brand-teal hover:bg-teal-600 text-white px-8 animate-bounce-light"
           >
             {buttonText}
           </Button>

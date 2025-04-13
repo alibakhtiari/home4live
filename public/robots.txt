@@ -1,17 +1,37 @@
 
+# Allow all web crawlers
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://home4live.com/sitemap.xml
 
+# Google search crawlers
 User-agent: Googlebot
 Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Mobile
+Allow: /
+User-agent: Googlebot-News
+Allow: /
 
+# Bing crawlers
 User-agent: Bingbot
 Allow: /
+User-agent: MSNBot
+Allow: /
 
+# Social media crawlers
 User-agent: Twitterbot
 Allow: /
-
 User-agent: facebookexternalhit
 Allow: /
+User-agent: LinkedInBot
+Allow: /
+User-agent: PinterestBot
+Allow: /
+
+# No crawl delay - allows faster indexing
+# Request-rate: 1/1s
+# Crawl-delay: 1
