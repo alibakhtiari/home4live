@@ -1,12 +1,24 @@
 
+# Home4Live.com Robots.txt
+# Last updated: 2025-04-13
+
 # Allow all web crawlers
 User-agent: *
 Allow: /
 
+# Block specific directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft/
+
 # Sitemap location
 Sitemap: https://home4live.com/sitemap.xml
 
-# Google search crawlers
+# Crawl-delay suggestion (not supported by all crawlers)
+Crawl-delay: 1
+
+# Google search crawlers - specific rules
 User-agent: Googlebot
 Allow: /
 User-agent: Googlebot-Image
@@ -16,13 +28,13 @@ Allow: /
 User-agent: Googlebot-News
 Allow: /
 
-# Bing crawlers
+# Bing crawlers - specific rules
 User-agent: Bingbot
 Allow: /
 User-agent: MSNBot
 Allow: /
 
-# Social media crawlers
+# Social media crawlers - specific rules
 User-agent: Twitterbot
 Allow: /
 User-agent: facebookexternalhit
@@ -32,6 +44,10 @@ Allow: /
 User-agent: PinterestBot
 Allow: /
 
-# No crawl delay - allows faster indexing
-# Request-rate: 1/1s
-# Crawl-delay: 1
+# Allow API discovery but prevent excessive crawling
+User-agent: *
+Allow: /api/*.json$
+Disallow: /api/
+
+# Host directive (helps with canonical domains)
+Host: home4live.com
