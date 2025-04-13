@@ -18,8 +18,11 @@ interface ServicePageProps {
     intro: string;
     benefits: {
       title: string;
-      description: string;
-    }[];
+      description: {
+        title: string;
+        description: string;
+      }[];
+    };
     process: {
       title: string;
       steps: {
@@ -165,7 +168,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {content.benefits.map((benefit, index) => (
+            {content.benefits.description.map((benefit, index) => (
               <motion.div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-sm"
