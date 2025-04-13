@@ -10,11 +10,11 @@ import {
   PaintBucket, 
   HardHat, 
   Hammer, 
-  FramerLogo,
+  Frame,
   Wrench,
   Layers,
   Paintbrush,
-  Cabinet,
+  BookOpen,
   Sparkles
 } from 'lucide-react';
 
@@ -66,7 +66,7 @@ const services: ServiceProps[] = [
     id: 'framing-structural',
     title: 'Framing & Structural Work',
     description: "Our expert team handles all aspects of framing and structural work, establishing the essential framework for your renovation project. We provide load-bearing wall modifications, structural beam installations, new wall framing, floor and ceiling joist installation, and roof framing. All work is performed to exact specifications, ensuring structural integrity and compliance with building codes.",
-    icon: <FramerLogo size={32} />
+    icon: <Frame size={32} />
   },
   {
     id: 'plumbing-electrical-hvac',
@@ -90,7 +90,7 @@ const services: ServiceProps[] = [
     id: 'cabinetry-fixtures',
     title: 'Cabinetry & Fixtures',
     description: "Enhance your home with custom cabinetry and fixture installations that combine beauty and functionality. We offer custom cabinet design and installation, countertop selection and installation, bathroom vanity installation, lighting fixture installation, and hardware selection and mounting. Our attention to detail ensures these important elements perfectly complement your space.",
-    icon: <Cabinet size={32} />
+    icon: <BookOpen size={32} />
   },
   {
     id: 'final-touches',
