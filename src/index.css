@@ -134,4 +134,32 @@
   .hero-gradient {
     @apply bg-gradient-to-r from-brand-blue via-blue-700 to-brand-blue;
   }
+  
+  .animate-bounce-light {
+    animation: bounce-light 2s infinite;
+  }
+  
+  @keyframes bounce-light {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
