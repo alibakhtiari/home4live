@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <header className={cn(
-      "transition-all duration-300 sticky top-0 z-50",
+      "transition-all duration-300 fixed w-full top-0 z-50",
       scrolled 
         ? "bg-white shadow-sm" 
         : "bg-transparent"
