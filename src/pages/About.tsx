@@ -217,11 +217,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA */}
-      <CTA 
-        title="Ready to Transform Your Home?"
-        subtitle="Contact us today to discuss your renovation project"
-        buttonText="Contact Us Now"
-      />
+      <CTA />
     </Layout>
   );
 };

@@ -67,7 +67,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
   return (
     <Layout>
       {/* Hero Section */}
-      <ServiceHero 
+      <ServiceHero
         title={title}
         description={description}
         icon={icon}
@@ -77,32 +77,32 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <ServiceIntro intro={content.intro} />
 
       {/* Benefits */}
-      <ServiceBenefits 
+      <ServiceBenefits
         title={content.benefits.title}
         benefits={benefitsData}
       />
 
       {/* Process */}
-      <ServiceProcess 
+      <ServiceProcess
         title={content.process.title}
         steps={content.process.steps}
       />
 
       {/* Features */}
-      <ServiceFeatures 
+      <ServiceFeatures
         title={content.features.title}
         features={content.features.items}
       />
 
       {/* Gallery Section */}
-      <Gallery 
+      <Gallery
         title="Our Recent Work"
         subtitle={`See our recent ${title.toLowerCase()} projects`}
         images={galleryImages}
       />
 
       {/* FAQ Section */}
-      <FAQSection 
+      <FAQSection
         title="Frequently Asked Questions"
         subtitle={`Common questions about our ${title.toLowerCase()} services`}
         faqs={faqs}
@@ -113,12 +113,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <RelatedServices services={relatedServices} />
 
       {/* CTA */}
-      <CTA 
+      <CTA
         title={`Ready to Transform Your Space with Our ${title} Services?`}
-        subtitle="Contact us today for a free consultation and detailed estimate"
-        buttonText="Get a Free Quote"
-        buttonLink="/contact"
-        bgColor="bg-brand-blue"
       />
     </Layout>
   );

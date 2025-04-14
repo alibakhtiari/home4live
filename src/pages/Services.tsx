@@ -204,13 +204,7 @@ const ServicesPage = () => {
       <ProcessTimeline steps={processSteps} />
 
       {/* CTA */}
-      <CTA
-        title="Ready to Start Your Renovation Project?"
-        subtitle="Contact us today for a free consultation and detailed estimate"
-        buttonText="Get a Free Quote"
-        buttonLink="/contact"
-        bgColor="bg-brand-blue"
-      />
+      <CTA  />
     </Layout>
   );
 };
