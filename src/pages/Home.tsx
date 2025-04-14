@@ -1,14 +1,14 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Home as HomeIcon, 
-  Building, 
-  Droplets, 
-  PaintBucket, 
-  HardHat, 
-  Hammer, 
-  Check, 
+import {
+  Home as HomeIcon,
+  Building,
+  Droplets,
+  PaintBucket,
+  HardHat,
+  Hammer,
+  Check,
   ChevronRight,
   Star
 } from 'lucide-react';
@@ -49,12 +49,12 @@ const HomePage = () => {
       <section className="relative">
         <div className="hero-gradient h-[600px] md:h-[700px] relative overflow-hidden">
           <div className="absolute inset-0 bg-black/30 z-10"></div>
-          
+
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
           </div>
-          
+
           <div className="relative h-full container-custom flex flex-col justify-center z-20">
             <div className="max-w-2xl text-white animate-fade-in">
               <div className="flex items-center mb-3">
@@ -63,11 +63,11 @@ const HomePage = () => {
               </div>
               <h1 className="text-white mb-6">Transform Your Home with Expert Renovation Services</h1>
               <p className="text-xl mb-8 text-gray-100">
-                Professional home renovation and basement underpinning services in Toronto and the GTA. 
+                Professional home renovation and basement underpinning services in Toronto and the GTA.
                 We turn your vision into reality with quality craftsmanship.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link to="/contact" className="animate-bounce-light">
+                <Link to="/contact">
                   <Button size="lg" className="bg-brand-teal hover:bg-teal-600 text-white font-semibold w-full sm:w-auto">
                     Get a Free Quote
                     <ChevronRight className="ml-2" size={16} />
@@ -79,7 +79,7 @@ const HomePage = () => {
                   </Button>
                 </Link>
               </div>
-              
+
               {/* Trust badges */}
               <div className="flex flex-wrap gap-4 mt-2">
                 <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -112,51 +112,51 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="Home Renovation"
                 description="Complete home renovation services to modernize and enhance your living spaces."
                 icon={<HomeIcon size={28} />}
-                link="/services#home-renovation"
+                link="/services/home-renovation"
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="Basement Underpinning"
                 description="Increase your basement ceiling height and create additional living space."
                 icon={<Building size={28} />}
-                link="/services#basement-underpinning"
+                link="/services/basement-underpinning"
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="Basement Waterproofing"
                 description="Protect your home from water damage with our expert waterproofing solutions."
                 icon={<Droplets size={28} />}
-                link="/services#basement-waterproofing"
+                link="/basement-waterproofing"
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.4s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="Basement Finishing"
                 description="Convert your unfinished basement into a beautiful, functional living space."
                 icon={<PaintBucket size={28} />}
-                link="/services#basement-finishing"
+                link="/services/basement-finishing"
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.5s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="House Additions"
                 description="Expand your home with custom additions that blend seamlessly with your existing structure."
                 icon={<HardHat size={28} />}
-                link="/services#house-additions"
+                link="/services/house-additions"
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.6s' }}>
-              <ServiceCard 
+              <ServiceCard
                 title="Demolition"
                 description="Professional, safe and efficient demolition services for your renovation project."
                 icon={<Hammer size={28} />}
-                link="/services#demolition"
+                link="/services/demolition"
               />
             </div>
           </div>
@@ -180,7 +180,7 @@ const HomePage = () => {
               <p className="text-gray-600 mb-6">
                 With years of experience in construction and renovation, we deliver high-quality results that exceed expectations. Our team of professionals is committed to turning your vision into reality.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
                   <div className="flex-shrink-0 mt-1">
@@ -191,7 +191,7 @@ const HomePage = () => {
                     <p className="text-gray-600">Our skilled professionals have years of experience in renovations and construction.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
                   <div className="flex-shrink-0 mt-1">
                     <Check className="text-brand-teal" size={20} />
@@ -201,7 +201,7 @@ const HomePage = () => {
                     <p className="text-gray-600">We never compromise on quality, using only the finest materials and techniques.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
                   <div className="flex-shrink-0 mt-1">
                     <Check className="text-brand-teal" size={20} />
@@ -211,7 +211,7 @@ const HomePage = () => {
                     <p className="text-gray-600">We complete projects on schedule without sacrificing quality or attention to detail.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.4s' }}>
                   <div className="flex-shrink-0 mt-1">
                     <Check className="text-brand-teal" size={20} />
@@ -222,7 +222,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8 animate-on-scroll" style={{ transitionDelay: '0.5s' }}>
                 <Link to="/about">
                   <Button variant="default" className="bg-brand-blue hover:bg-blue-800">
@@ -231,7 +231,7 @@ const HomePage = () => {
                 </Link>
               </div>
             </div>
-            
+
             <div className="animate-on-scroll">
               <div className="bg-gray-100 h-[400px] rounded-lg overflow-hidden shadow-lg">
                 <div className="p-8 h-full flex flex-col justify-center">
@@ -259,9 +259,9 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             <div className="animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
-              <TestimonialCard 
+              <TestimonialCard
                 name="Michael Brown"
                 location="Toronto, ON"
                 text="Home4Live completely transformed our basement. The team was professional, punctual, and the quality of work exceeded our expectations. Highly recommended!"
@@ -269,7 +269,7 @@ const HomePage = () => {
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-              <TestimonialCard 
+              <TestimonialCard
                 name="Sarah Johnson"
                 location="Richmond Hill, ON"
                 text="We hired Home4Live for our complete home renovation, and we couldn't be happier with the results. The attention to detail and craftsmanship is outstanding."
@@ -277,7 +277,7 @@ const HomePage = () => {
               />
             </div>
             <div className="animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
-              <TestimonialCard 
+              <TestimonialCard
                 name="David Chen"
                 location="Markham, ON"
                 text="The basement underpinning project was completed on time and on budget. The extra ceiling height has transformed our basement into a fully functional living space."
