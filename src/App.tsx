@@ -1,4 +1,3 @@
-
 import { Suspense, lazy, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -18,6 +17,12 @@ const ServiceHouseAdditions = lazy(() => import("./pages/ServiceHouseAdditions")
 const ServiceDemolition = lazy(() => import("./pages/ServiceDemolition"));
 const ServiceFoundationRepair = lazy(() => import("./pages/ServiceFoundationRepair"));
 const ServiceExteriorDrainage = lazy(() => import("./pages/ServiceExteriorDrainage"));
+const ServiceFramingStructural = lazy(() => import("./pages/ServiceFramingStructural"));
+const ServicePlumbingElectricalHVAC = lazy(() => import("./pages/ServicePlumbingElectricalHVAC"));
+const ServiceInsulationDrywall = lazy(() => import("./pages/ServiceInsulationDrywall"));
+const ServiceFlooringFinishes = lazy(() => import("./pages/ServiceFlooringFinishes"));
+const ServiceCabinetryFixtures = lazy(() => import("./pages/ServiceCabinetryFixtures"));
+const ServiceFinalTouches = lazy(() => import("./pages/ServiceFinalTouches"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -55,6 +60,12 @@ const App = () => {
                 <Route path="/services/demolition" element={<ServiceDemolition />} />
                 <Route path="/services/foundation-repair" element={<ServiceFoundationRepair />} />
                 <Route path="/services/exterior-drainage" element={<ServiceExteriorDrainage />} />
+                <Route path="/services/framing-structural" element={<ServiceFramingStructural />} />
+                <Route path="/services/plumbing-electrical-hvac" element={<ServicePlumbingElectricalHVAC />} />
+                <Route path="/services/insulation-drywall" element={<ServiceInsulationDrywall />} />
+                <Route path="/services/flooring-finishes" element={<ServiceFlooringFinishes />} />
+                <Route path="/services/cabinetry-fixtures" element={<ServiceCabinetryFixtures />} />
+                <Route path="/services/final-touches" element={<ServiceFinalTouches />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />

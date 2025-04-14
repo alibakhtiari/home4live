@@ -1,33 +1,26 @@
-
 import React, { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import CTA from '@/components/CTA';
-import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import ServiceCard from '@/components/ServiceCard';
-import { 
-  Home, 
-  Building, 
-  Droplets, 
-  PaintBucket, 
-  HardHat, 
-  Hammer, 
+import {
+  Home,
+  Building,
+  Droplets,
+  PaintBucket,
+  HardHat,
+  Hammer,
   Frame,
   Wrench,
   Layers,
   Paintbrush,
   BookOpen,
-  Sparkles,
-  ArrowRight
+  Sparkles
 } from 'lucide-react';
-
-interface ServiceProps {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
+import HeroSection from '@/components/services/HeroSection';
+import ServicesList from '@/components/services/ServicesList';
+import ProcessTimeline from '@/components/services/ProcessTimeline';
+import { ServiceProps } from '@/types/service';
 
 const services: ServiceProps[] = [
   {
@@ -104,9 +97,37 @@ const services: ServiceProps[] = [
   }
 ];
 
+const processSteps = [
+  {
+    number: "01",
+    title: "Consultation & Planning",
+    description: "We begin with a thorough consultation to understand your vision, needs, and budget. Our team will assess your space, discuss design possibilities, and provide initial recommendations."
+  },
+  {
+    number: "02",
+    title: "Design & Estimation",
+    description: "Our design team creates detailed plans for your project, including material selections, layout options, and 3D renderings when applicable. We provide a comprehensive estimate with transparent pricing."
+  },
+  {
+    number: "03",
+    title: "Permitting & Preparation",
+    description: "We handle all necessary permits and approvals to ensure your project complies with local building codes. Our team prepares the site for construction, including any required demolition or site preparation."
+  },
+  {
+    number: "04",
+    title: "Construction & Implementation",
+    description: "Our skilled craftsmen execute the renovation according to the approved plans, maintaining the highest standards of quality. We provide regular updates and address any questions or concerns throughout the process."
+  },
+  {
+    number: "05",
+    title: "Final Inspection & Handover",
+    description: "Upon completion, we conduct a thorough inspection to ensure everything meets our high standards. We walk you through the renovated space, provide maintenance guidance, and address any final adjustments needed."
+  }
+];
+
 const ServicesPage = () => {
   const location = useLocation();
-  
+
   useEffect(() => {
     // Scroll to the specific service section if hash is present
     if (location.hash) {
@@ -121,30 +142,6 @@ const ServicesPage = () => {
       window.scrollTo(0, 0);
     }
   }, [location]);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
-  };
 
   return (
     <Layout>
@@ -198,187 +195,16 @@ const ServicesPage = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute w-96 h-96 rounded-full bg-brand-teal blur-3xl -top-20 -left-20 animate-pulse"></div>
-          <div className="absolute w-96 h-96 rounded-full bg-blue-500 blur-3xl -bottom-20 -right-20 animate-pulse"></div>
-        </div>
-        <div className="container-custom text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-white mb-6">Transforming Toronto Homes</h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-10">
-              Comprehensive renovation and construction services tailored to your vision,
-              delivered with precision and excellence
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact" className="btn-primary">
-                Get a Free Quote
-              </Link>
-              <Link to="#service-overview" className="btn-outline bg-transparent border-white text-white hover:bg-white hover:text-brand-blue">
-                Explore Services
-              </Link>
-            </div>
-          </motion.div>
-          
-          {/* Trust Badges */}
-          <div className="mt-16 flex flex-wrap justify-center gap-8 items-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="flex flex-col items-center"
-            >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-2">
-                <HardHat className="text-brand-blue" size={32} />
-              </div>
-              <span className="text-white text-sm">Licensed</span>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="flex flex-col items-center"
-            >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-2">
-                <Sparkles className="text-brand-blue" size={32} />
-              </div>
-              <span className="text-white text-sm">10+ Years</span>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-col items-center"
-            >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-2">
-                <Home className="text-brand-blue" size={32} />
-              </div>
-              <span className="text-white text-sm">100+ Projects</span>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Services Overview */}
-      <section id="service-overview" className="section scroll-mt-24">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="mb-4">Our Renovation Services</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                From basement underpinning to complete home renovations, we provide expert services for every aspect of your project
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {services.map((service) => (
-              <motion.div key={service.id} variants={itemVariants}>
-                <Link to={`/services/${service.id}`}>
-                  <ServiceCard
-                    title={service.title}
-                    description={service.description}
-                    icon={service.icon}
-                    link={`/services/${service.id}`}
-                  />
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <ServicesList services={services} />
 
       {/* Process Section */}
-      <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="mb-4">Our Renovation Process</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We follow a structured approach to ensure your renovation project is completed efficiently, on time, and to your complete satisfaction
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-brand-teal hidden md:block" style={{ transform: 'translateX(-50%)' }}></div>
-            
-            {/* Process Steps */}
-            <div className="space-y-24">
-              {[
-                { 
-                  number: "01", 
-                  title: "Consultation & Planning", 
-                  description: "We begin with a thorough consultation to understand your vision, needs, and budget. Our team will assess your space, discuss design possibilities, and provide initial recommendations." 
-                },
-                { 
-                  number: "02", 
-                  title: "Design & Estimation", 
-                  description: "Our design team creates detailed plans for your project, including material selections, layout options, and 3D renderings when applicable. We provide a comprehensive estimate with transparent pricing." 
-                },
-                { 
-                  number: "03", 
-                  title: "Permitting & Preparation", 
-                  description: "We handle all necessary permits and approvals to ensure your project complies with local building codes. Our team prepares the site for construction, including any required demolition or site preparation." 
-                },
-                { 
-                  number: "04", 
-                  title: "Construction & Implementation", 
-                  description: "Our skilled craftsmen execute the renovation according to the approved plans, maintaining the highest standards of quality. We provide regular updates and address any questions or concerns throughout the process." 
-                },
-                { 
-                  number: "05", 
-                  title: "Final Inspection & Handover", 
-                  description: "Upon completion, we conduct a thorough inspection to ensure everything meets our high standards. We walk you through the renovated space, provide maintenance guidance, and address any final adjustments needed." 
-                }
-              ].map((step, index) => (
-                <motion.div 
-                  key={index}
-                  className="flex flex-col md:flex-row items-center md:items-start gap-8"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                >
-                  <div className="flex-shrink-0 relative">
-                    <div className="w-20 h-20 bg-brand-teal text-white rounded-full flex items-center justify-center text-3xl font-bold relative z-10">
-                      {step.number}
-                    </div>
-                  </div>
-                  <div className={`flex-grow ${index % 2 === 0 ? 'md:text-right' : 'md:order-first'}`}>
-                    <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessTimeline steps={processSteps} />
 
       {/* CTA */}
-      <CTA 
+      <CTA
         title="Ready to Start Your Renovation Project?"
         subtitle="Contact us today for a free consultation and detailed estimate"
         buttonText="Get a Free Quote"

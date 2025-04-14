@@ -1,4 +1,3 @@
-
 # Allow all web crawlers
 User-agent: *
 Allow: /
@@ -18,6 +17,12 @@ Allow: /services/house-additions
 Allow: /services/demolition
 Allow: /services/foundation-repair
 Allow: /services/exterior-drainage
+Allow: /services/framing-structural
+Allow: /services/plumbing-electrical-hvac
+Allow: /services/insulation-drywall
+Allow: /services/flooring-finishes
+Allow: /services/cabinetry-fixtures
+Allow: /services/final-touches
 
 # Legal pages
 Allow: /privacy-policy
