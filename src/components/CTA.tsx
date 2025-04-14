@@ -1,49 +1,42 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Button } from './ui/button';
+import { Phone } from 'lucide-react';
 
 interface CTAProps {
-  title: string;
-  subtitle: string;
-  buttonText: string;
-  buttonLink: string;
-  bgColor?: string;
+  title?: string;
 }
 
 const CTA: React.FC<CTAProps> = ({
-  title,
-  subtitle,
-  buttonText,
-  buttonLink,
-  bgColor = 'bg-brand-blue'
+  title = "Ready to start your project?"
 }) => {
   return (
-    <section className={`${bgColor} py-16 md:py-24 relative overflow-hidden`}>
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute w-96 h-96 rounded-full bg-white blur-3xl -top-20 -left-20 animate-pulse"></div>
-        <div className="absolute w-96 h-96 rounded-full bg-white blur-3xl -bottom-20 -right-20 animate-pulse"></div>
-      </div>
-      <div className="container-custom relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-white mb-4">{title}</h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8">
-            {subtitle}
-          </p>
-          <Link 
-            to={buttonLink} 
-            className="bg-white text-brand-blue px-8 py-3 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors inline-block"
-          >
-            {buttonText}
+  <section className="bg-white py-8 md:py-12">
+    <div className="container-custom bg-gray-100 rounded-lg p-8 md:p-12 shadow-md">
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="mb-6 md:mb-0">
+          <h2 className="text-2xl font-bold mb-2">{title}</h2>
+          <p className="text-gray-600">Contact us today for a free consultation and estimate</p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link to="/contact">
+            <Button variant="default" className="bg-brand-teal hover:bg-teal-600 w-full sm:w-auto">
+              Get a Free Quote
+            </Button>
           </Link>
-        </motion.div>
+          <a href="tel:+16478069089" className="inline-flex items-center justify-center">
+            <Button variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white w-full sm:w-auto">
+              <Phone className="mr-2" size={18} />
+              Call Us Now
+            </Button>
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
-};
+
+}
 
 export default CTA;
