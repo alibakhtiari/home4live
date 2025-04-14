@@ -1,13 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, ChevronDown, ChevronUp, ArrowUp } from 'lucide-react';
+import { Menu, X, Phone, ChevronRight,HomeIcon, Building, Droplets, PaintBucket ,HardHat ,Hammer} from 'lucide-react';
 import { Button } from './ui/button';
-import { 
+import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
@@ -19,33 +18,33 @@ import QuoteModal from './QuoteModal';
 const services = [
   {
     title: "Home Renovation",
-    description: "Complete home renovation services for every room",
-    path: "/services/home-renovation"
+    path: "/services/home-renovation",
+    ic: <HomeIcon />
   },
   {
     title: "Basement Underpinning",
-    description: "Increase your basement ceiling height",
-    path: "/services/basement-underpinning"
+    path: "/services/basement-underpinning",
+    ic: <Building/>
   },
   {
     title: "Basement Waterproofing",
-    description: "Protect your home from water damage",
-    path: "/services/basement-waterproofing"
+    path: "/services/basement-waterproofing",
+    ic: <Droplets/>
   },
   {
     title: "Basement Finishing",
-    description: "Convert your unfinished basement into a beautiful space",
-    path: "/services/basement-finishing"
+    path: "/services/basement-finishing",
+    ic: <PaintBucket/>
   },
   {
     title: "House Additions",
-    description: "Expand your home with custom additions",
-    path: "/services/house-additions"
+    path: "/services/house-additions",
+    ic: <HardHat/>
   },
   {
     title: "Demolition",
-    description: "Professional, safe and efficient demolition services",
-    path: "/services/demolition"
+    path: "/services/demolition",
+    ic: <Hammer/>
   }
 ];
 
@@ -78,7 +77,7 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -87,8 +86,8 @@ const Header = () => {
   return (
     <header className={cn(
       "transition-all duration-300 fixed w-full top-0 z-50",
-      scrolled 
-        ? "bg-white shadow-sm" 
+      scrolled
+        ? "bg-white shadow-sm"
         : "bg-transparent"
     )}>
       <div className="container-custom py-4">
@@ -97,7 +96,7 @@ const Header = () => {
             <span className={cn(
               "text-2xl font-bold transition-colors",
               scrolled ? "text-brand-blue" : "text-white"
-            )}>Home<span className="text-brand-orange">4</span>Live</span>
+            )}>Home<span className="text-brand-teal">4</span>Live</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -107,53 +106,54 @@ const Header = () => {
                 <NavigationMenuItem>
                   <Link to="/" className={cn(
                     "font-medium px-4 py-2 transition-colors",
-                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-orange"
+                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-teal"
                   )}>
                     Home
                   </Link>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={cn(
                     "font-medium bg-transparent",
-                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-orange"
+                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-teal"
                   )}>
+                    <Link to="/services" className="flex items-center">
                     Services
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-2 gap-3 p-6 w-[500px]">
+                    <div className="grid grid-cols-2 gap-3 p-4 w-[600px]">
                       {services.map((service) => (
-                        <Link 
+                        <Link
                           key={service.path}
-                          to={service.path} 
-                          className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100"
-                        >
-                          <h3 className="text-base font-medium text-brand-blue">{service.title}</h3>
-                          <p className="text-sm text-gray-500">{service.description}</p>
+                          to={service.path}
+                          className="flex  gap-2 items-center content-center rounded-md hover:bg-gray-100"
+                        > <span className='w-10 h-10 flex items-center justify-center rounded-full bg-brand-teal/10 text-gray-800'>{service.ic}</span>
+                          <h3 className="text-base font-medium text-gray-800 mb-0">{service.title}</h3>
                         </Link>
                       ))}
-                      <div className="col-span-2 mt-3 border-t pt-3">
-                        <Link to="/services" className="flex items-center text-brand-blue hover:text-brand-orange font-medium">
-                          View all services <ChevronDown className="ml-1 h-4 w-4" />
+                      <div className="col-span-2 border-t pt-2 ">
+                        <Link to="/services" className="flex items-center text-brand-blue hover:text-brand-teal font-medium">
+                          View all services <ChevronRight className="ml-1 h-4 w-4" />
                         </Link>
                       </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <Link to="/about" className={cn(
                     "font-medium px-4 py-2 transition-colors",
-                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-orange"
+                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-teal"
                   )}>
                     About
                   </Link>
                 </NavigationMenuItem>
-                
+
                 <NavigationMenuItem>
                   <Link to="/contact" className={cn(
                     "font-medium px-4 py-2 transition-colors",
-                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-orange"
+                    scrolled ? "text-brand-darkGray hover:text-brand-blue" : "text-white hover:text-brand-teal"
                   )}>
                     Contact
                   </Link>
@@ -166,14 +166,14 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <a href="tel:+16478069089" className={cn(
               "flex items-center font-medium",
-              scrolled ? "text-brand-orange" : "text-white"
+              scrolled ? "text-brand-teal" : "text-white"
             )}>
               <Phone size={18} className="mr-2" />
               <span>647-806-9089</span>
             </a>
-            <Button 
-              variant="default" 
-              className="bg-brand-orange hover:bg-orange-600"
+            <Button
+              variant="default"
+              className="bg-brand-teal hover:bg-orange-600"
               onClick={openQuoteModal}
             >
               Get a Quote
@@ -184,7 +184,7 @@ const Header = () => {
           <div className="md:hidden flex items-center z-20">
             <a href="tel:+16478069089" className={cn(
               "mr-4",
-              scrolled ? "text-brand-orange" : "text-white"
+              scrolled ? "text-brand-teal" : "text-white"
             )}>
               <Phone size={24} />
             </a>
@@ -198,17 +198,17 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden pt-4 pb-2 bg-white animate-fade-in absolute top-full left-0 w-full z-10 shadow-md">
             <div className="flex flex-col space-y-3 px-4">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="font-medium text-brand-darkGray hover:text-brand-blue py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
                 onClick={toggleMenu}
               >
                 Home
               </Link>
-              
+
               <div className="relative">
-                <Link 
-                  to="/services" 
+                <Link
+                  to="/services"
                   className="font-medium text-brand-darkGray hover:text-brand-blue py-2 px-4 rounded-md hover:bg-gray-100 transition-colors w-full flex justify-between items-center"
                   onClick={toggleMenu}
                 >
@@ -216,9 +216,9 @@ const Header = () => {
                 </Link>
                 <div className="pl-6 mt-2 space-y-2">
                   {services.map((service) => (
-                    <Link 
+                    <Link
                       key={service.path}
-                      to={service.path} 
+                      to={service.path}
                       className="block font-medium text-sm text-brand-darkGray hover:text-brand-blue py-1 px-4 rounded-md hover:bg-gray-100 transition-colors"
                       onClick={toggleMenu}
                     >
@@ -227,26 +227,26 @@ const Header = () => {
                   ))}
                 </div>
               </div>
-              
-              <Link 
-                to="/about" 
+
+              <Link
+                to="/about"
                 className="font-medium text-brand-darkGray hover:text-brand-blue py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
                 onClick={toggleMenu}
               >
                 About
               </Link>
-              
-              <Link 
-                to="/contact" 
+
+              <Link
+                to="/contact"
                 className="font-medium text-brand-darkGray hover:text-brand-blue py-2 px-4 rounded-md hover:bg-gray-100 transition-colors"
                 onClick={toggleMenu}
               >
                 Contact
               </Link>
-              
-              <Button 
-                variant="default" 
-                className="w-full bg-brand-orange hover:bg-orange-600 mt-2"
+
+              <Button
+                variant="default"
+                className="w-full bg-brand-teal hover:bg-orange-600 mt-2"
                 onClick={() => {
                   toggleMenu();
                   openQuoteModal();
