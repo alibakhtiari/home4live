@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -106,59 +105,36 @@ const HomePage = () => {
           <div className="text-center mb-12 animate-on-scroll">
             <h2 className="mb-4">Our Services</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We offer comprehensive renovation and construction services to transform your home
+              Comprehensive renovation and construction services for your home
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
-              <ServiceCard
-                title="Home Renovation"
-                description="Complete home renovation services to modernize and enhance your living spaces."
-                icon={<HomeIcon size={28} />}
-                link="/services/home-renovation"
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-              <ServiceCard
-                title="Basement Underpinning"
-                description="Increase your basement ceiling height and create additional living space."
-                icon={<Building size={28} />}
-                link="/services/basement-underpinning"
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
-              <ServiceCard
-                title="Basement Waterproofing"
-                description="Protect your home from water damage with our expert waterproofing solutions."
-                icon={<Droplets size={28} />}
-                link="/basement-waterproofing"
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.4s' }}>
-              <ServiceCard
-                title="Basement Finishing"
-                description="Convert your unfinished basement into a beautiful, functional living space."
-                icon={<PaintBucket size={28} />}
-                link="/services/basement-finishing"
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.5s' }}>
-              <ServiceCard
-                title="House Additions"
-                description="Expand your home with custom additions that blend seamlessly with your existing structure."
-                icon={<HardHat size={28} />}
-                link="/services/house-additions"
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.6s' }}>
-              <ServiceCard
-                title="Demolition"
-                description="Professional, safe and efficient demolition services for your renovation project."
-                icon={<Hammer size={28} />}
-                link="/services/demolition"
-              />
-            </div>
+            {serviceGroups.map((group) => (
+              group.services.map((service, index) => (
+                <Link 
+                  key={service.path}
+                  to={service.path}
+                  className="animate-on-scroll block h-full"
+                  style={{ transitionDelay: `${(index + 1) * 0.1}s` }}
+                >
+                  <div className="flex flex-col justify-between bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group">
+                    <div>
+                      <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        {service.icon}
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+                      <p className="text-gray-600 mb-4">
+                        Professional {service.title.toLowerCase()} services tailored to your needs
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-brand-blue font-medium group-hover:text-brand-teal transition-colors">
+                      Learn More <ChevronRight size={16} className="ml-1" />
+                    </div>
+                  </div>
+                </Link>
+              ))
+            ))}
           </div>
 
           <div className="text-center mt-12 animate-on-scroll">
@@ -293,3 +269,77 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+// Services data for mega menu grouped by category
+const serviceGroups = [
+  {
+    title: "Home Renovation",
+    services: [
+      {
+        title: "Home Renovation",
+        path: "/services/home-renovation",
+        icon: <HomeIcon className="w-5 h-5" />
+      },
+      {
+        title: "House Additions",
+        path: "/services/house-additions",
+        icon: <HardHat className="w-5 h-5" />
+      },
+      {
+        title: "Plumbing, Electrical & HVAC",
+        path: "/services/plumbing-electrical-hvac",
+        icon: <Lightbulb className="w-5 h-5" />
+      },
+      {
+        title: "Cabinetry & Fixtures",
+        path: "/services/cabinetry-fixtures",
+        icon: <Tool className="w-5 h-5" />
+      },
+      {
+        title: "Flooring & Finishes",
+        path: "/services/flooring-finishes",
+        icon: <Paintbrush className="w-5 h-5" />
+      }
+    ]
+  },
+  {
+    title: "Basement Renovation",
+    services: [
+      {
+        title: "Basement Underpinning",
+        path: "/services/basement-underpinning",
+        icon: <Building className="w-5 h-5" />
+      },
+      {
+        title: "Basement Waterproofing",
+        path: "/services/basement-waterproofing",
+        icon: <Droplets className="w-5 h-5" />
+      },
+      {
+        title: "Basement Finishing",
+        path: "/services/basement-finishing",
+        icon: <PaintBucket className="w-5 h-5" />
+      }
+    ]
+  },
+  {
+    title: "Additional Services",
+    services: [
+      {
+        title: "Demolition",
+        path: "/services/demolition",
+        icon: <Hammer className="w-5 h-5" />
+      },
+      {
+        title: "Framing & Structural Work",
+        path: "/services/framing-structural",
+        icon: <Wrench className="w-5 h-5" />
+      },
+      {
+        title: "Insulation & Drywall",
+        path: "/services/insulation-drywall",
+        icon: <LayersIcon className="w-5 h-5" />
+      }
+    ]
+  }
+];
