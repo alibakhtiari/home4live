@@ -18,7 +18,7 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
   return (
     <section className="section">
       <div className="container-custom">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,14 +30,14 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-20 top-0 bottom-0 w-0.5 bg-brand-teal hidden md:block"></div>
-          
+          <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-brand-teal hidden md:block"></div>
+
           {/* Process Steps */}
           <div className="space-y-12">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="flex items-start gap-8"
+                className="flex items-center gap-8"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
