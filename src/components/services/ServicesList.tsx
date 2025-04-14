@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import ServiceCard from '@/components/ServiceCard';
+import ServiceCard from './ServiceCard';
 import { ServiceProps } from '@/types/service';
 
 interface ServicesListProps {
