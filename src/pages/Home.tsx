@@ -1,25 +1,10 @@
+
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Home as HomeIcon,
-  Building,
-  Droplets,
-  PaintBucket,
-  HardHat,
-  Hammer,
-  Check,
-  ChevronRight,
-  Lightbulb,
-  InspectionPanel,
-  Paintbrush,
-  LayersIcon,
-  Wrench,
-  Star
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Layout from '@/components/Layout';
 import CTA from '@/components/CTA';
-import ServiceCard from '@/components/ServiceCard';
+import HeroSection from '@/components/home/HeroSection';
+import ServicesList from '@/components/home/ServicesList';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 import TestimonialCard from '@/components/TestimonialCard';
 
 const HomePage = () => {
@@ -49,188 +34,11 @@ const HomePage = () => {
 
   return (
     <Layout>
-      {/* Hero Section - Enhanced */}
-      <section className="relative">
-        <div className="hero-gradient h-[600px] md:h-[700px] relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/30 z-10"></div>
-
-          {/* Animated background pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
-          </div>
-
-          <div className="relative h-full container-custom flex flex-col justify-center z-20">
-            <div className="max-w-2xl text-white animate-fade-in">
-              <div className="flex items-center mb-3">
-                <Star className="text-brand-teal mr-2" size={24} fill="#33cb98" />
-                <span className="text-brand-teal font-semibold tracking-wider">TRUSTED RENOVATION EXPERTS</span>
-              </div>
-              <h1 className="text-white mb-6">Transform Your Home with Expert Renovation Services</h1>
-              <p className="text-xl mb-8 text-gray-100">
-                Professional home renovation and basement underpinning services in Toronto and the GTA.
-                We turn your vision into reality with quality craftsmanship.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-brand-teal hover:bg-teal-600 text-white font-semibold w-full sm:w-auto">
-                    Get a Free Quote
-                    <ChevronRight className="ml-2" size={16} />
-                  </Button>
-                </Link>
-                <Link to="/services">
-                  <Button variant="outline" size="lg" className="bg-white/10 text-white border-white hover:bg-white/20 w-full sm:w-auto">
-                    Our Services
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-4 mt-2">
-                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <Check className="text-brand-teal mr-1" size={16} />
-                  <span className="text-sm">Licensed & Insured</span>
-                </div>
-                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <Check className="text-brand-teal mr-1" size={16} />
-                  <span className="text-sm">10+ Years Experience</span>
-                </div>
-                <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <Check className="text-brand-teal mr-1" size={16} />
-                  <span className="text-sm">Free Estimates</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Services */}
-      <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12 animate-on-scroll">
-            <h2 className="mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive renovation and construction services for your home
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceGroups.map((group) => (
-              group.services.map((service, index) => (
-                <Link
-                  key={service.path}
-                  to={service.path}
-                  className="animate-on-scroll block h-full"
-                  style={{ transitionDelay: `${(index + 1) * 0.1}s` }}
-                >
-                  <div className="flex flex-col justify-between bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group">
-                    <div>
-                      <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-brand-blue transition-colors">{service.title}</h3>
-                      <p className="text-gray-600 mb-4">
-                        Professional {service.title.toLowerCase()} services tailored to your needs
-                      </p>
-                    </div>
-                    <div className="inline-flex items-center text-brand-blue font-medium group-hover:text-brand-teal transition-colors">
-                      Learn More <ChevronRight size={16} className="ml-1" />
-                    </div>
-                  </div>
-                </Link>
-              ))
-            ))}
-          </div>
-
-          <div className="text-center mt-12 animate-on-scroll">
-            <Link to="/services">
-              <Button variant="outline" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-                View All Services
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="section">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <h2 className="mb-4">Why Choose Home4Live for Your Renovation Projects</h2>
-              <p className="text-gray-600 mb-6">
-                With years of experience in construction and renovation, we deliver high-quality results that exceed expectations. Our team of professionals is committed to turning your vision into reality.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
-                  <div className="flex-shrink-0 mt-1">
-                    <Check className="text-brand-teal" size={20} />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-lg font-semibold">Experienced Team</h3>
-                    <p className="text-gray-600">Our skilled professionals have years of experience in renovations and construction.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-                  <div className="flex-shrink-0 mt-1">
-                    <Check className="text-brand-teal" size={20} />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-lg font-semibold">Quality Workmanship</h3>
-                    <p className="text-gray-600">We never compromise on quality, using only the finest materials and techniques.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
-                  <div className="flex-shrink-0 mt-1">
-                    <Check className="text-brand-teal" size={20} />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-lg font-semibold">Timely Completion</h3>
-                    <p className="text-gray-600">We complete projects on schedule without sacrificing quality or attention to detail.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start animate-on-scroll" style={{ transitionDelay: '0.4s' }}>
-                  <div className="flex-shrink-0 mt-1">
-                    <Check className="text-brand-teal" size={20} />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-lg font-semibold">Customer Satisfaction</h3>
-                    <p className="text-gray-600">Our client-focused approach ensures your complete satisfaction with the final result.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8 animate-on-scroll" style={{ transitionDelay: '0.5s' }}>
-                <Link to="/about">
-                  <Button variant="default" className="bg-brand-blue hover:bg-blue-800">
-                    Learn More About Us
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="animate-on-scroll">
-              <div className="bg-gray-100 h-[400px] rounded-lg overflow-hidden shadow-lg">
-                <div className="p-8 h-full flex flex-col justify-center">
-                  <div className="text-center">
-                    <div className="inline-block p-4 rounded-full bg-brand-teal/10 mb-4">
-                      <Building className="text-brand-teal" size={48} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3">Professional Team</h3>
-                    <p className="text-gray-600">Our experienced team brings expertise and dedication to every project, ensuring exceptional results.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
+      <HeroSection />
+      <ServicesList />
+      <WhyChooseUs />
+      
+      {/* Testimonials Section */}
       <section className="section bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12 animate-on-scroll">
@@ -241,30 +49,15 @@ const HomePage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.1s' }}>
-              <TestimonialCard
-                name="Michael Brown"
-                location="Toronto, ON"
-                text="Home4Live completely transformed our basement. The team was professional, punctual, and the quality of work exceeded our expectations. Highly recommended!"
-                rating={5}
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.2s' }}>
-              <TestimonialCard
-                name="Sarah Johnson"
-                location="Richmond Hill, ON"
-                text="We hired Home4Live for our complete home renovation, and we couldn't be happier with the results. The attention to detail and craftsmanship is outstanding."
-                rating={5}
-              />
-            </div>
-            <div className="animate-on-scroll" style={{ transitionDelay: '0.3s' }}>
-              <TestimonialCard
-                name="David Chen"
-                location="Markham, ON"
-                text="The basement underpinning project was completed on time and on budget. The extra ceiling height has transformed our basement into a fully functional living space."
-                rating={4}
-              />
-            </div>
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={testimonial.name}
+                className="animate-on-scroll" 
+                style={{ transitionDelay: `${(index + 1) * 0.1}s` }}
+              >
+                <TestimonialCard {...testimonial} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -273,78 +66,25 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
-
-// Services data for mega menu grouped by category
-const serviceGroups = [
+const testimonials = [
   {
-    title: "Home Renovation",
-    services: [
-      {
-        title: "Home Renovation",
-        path: "/services/home-renovation",
-        icon: <HomeIcon className="w-5 h-5" />
-      },
-      {
-        title: "House Additions",
-        path: "/services/house-additions",
-        icon: <HardHat className="w-5 h-5" />
-      },
-      {
-        title: "Plumbing, Electrical & HVAC",
-        path: "/services/plumbing-electrical-hvac",
-        icon: <Lightbulb className="w-5 h-5" />
-      },
-      {
-        title: "Cabinetry & Fixtures",
-        path: "/services/cabinetry-fixtures",
-        icon: <InspectionPanel className="w-5 h-5" />
-      },
-      {
-        title: "Flooring & Finishes",
-        path: "/services/flooring-finishes",
-        icon: <Paintbrush className="w-5 h-5" />
-      }
-    ]
+    name: "Michael Brown",
+    location: "Toronto, ON",
+    text: "Home4Live completely transformed our basement. The team was professional, punctual, and the quality of work exceeded our expectations. Highly recommended!",
+    rating: 5
   },
   {
-    title: "Basement Renovation",
-    services: [
-      {
-        title: "Basement Underpinning",
-        path: "/services/basement-underpinning",
-        icon: <Building className="w-5 h-5" />
-      },
-      {
-        title: "Basement Waterproofing",
-        path: "/services/basement-waterproofing",
-        icon: <Droplets className="w-5 h-5" />
-      },
-      {
-        title: "Basement Finishing",
-        path: "/services/basement-finishing",
-        icon: <PaintBucket className="w-5 h-5" />
-      }
-    ]
+    name: "Sarah Johnson",
+    location: "Richmond Hill, ON",
+    text: "We hired Home4Live for our complete home renovation, and we couldn't be happier with the results. The attention to detail and craftsmanship is outstanding.",
+    rating: 5
   },
   {
-    title: "Additional Services",
-    services: [
-      {
-        title: "Demolition",
-        path: "/services/demolition",
-        icon: <Hammer className="w-5 h-5" />
-      },
-      {
-        title: "Framing & Structural Work",
-        path: "/services/framing-structural",
-        icon: <Wrench className="w-5 h-5" />
-      },
-      {
-        title: "Insulation & Drywall",
-        path: "/services/insulation-drywall",
-        icon: <LayersIcon className="w-5 h-5" />
-      }
-    ]
+    name: "David Chen",
+    location: "Markham, ON",
+    text: "The basement underpinning project was completed on time and on budget. The extra ceiling height has transformed our basement into a fully functional living space.",
+    rating: 4
   }
 ];
+
+export default HomePage;
