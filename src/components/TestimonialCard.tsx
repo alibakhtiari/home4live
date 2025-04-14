@@ -16,14 +16,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   rating
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
+    <div className="flex flex-col justify-between bg-white rounded-lg shadow-md p-6 border border-gray-100 h-full">
       <div className="flex mb-4">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
             size={18}
-            fill={i < rating ? "#F97316" : "none"}
-            className={i < rating ? "text-brand-orange" : "text-gray-300"}
+            fill={i < rating ? "currentColor" : "none"}
+            className="text-yellow-400"
           />
         ))}
       </div>
