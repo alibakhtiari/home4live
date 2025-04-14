@@ -16,6 +16,8 @@ Allow: /services/basement-waterproofing
 Allow: /services/basement-finishing
 Allow: /services/house-additions
 Allow: /services/demolition
+Allow: /services/foundation-repair
+Allow: /services/exterior-drainage
 
 # Legal pages
 Allow: /privacy-policy

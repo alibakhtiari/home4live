@@ -10,6 +10,7 @@ interface SEOProps {
   ogType?: 'website' | 'article';
   twitterCard?: 'summary' | 'summary_large_image';
   keywords?: string;
+  structuredData?: Record<string, any>;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -20,6 +21,7 @@ const SEO: React.FC<SEOProps> = ({
   ogType = 'website',
   twitterCard = 'summary_large_image',
   keywords,
+  structuredData,
 }) => {
   // Default site name
   const siteName = 'Home4Live';
@@ -53,6 +55,13 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={`https://home4live.com${ogImage}`} />}
+      
+      {/* Structured Data / JSON-LD */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   );
 };

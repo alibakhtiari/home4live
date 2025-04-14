@@ -16,6 +16,8 @@ const ServiceBasementWaterproofing = lazy(() => import("./pages/ServiceBasementW
 const ServiceBasementFinishing = lazy(() => import("./pages/ServiceBasementFinishing"));
 const ServiceHouseAdditions = lazy(() => import("./pages/ServiceHouseAdditions"));
 const ServiceDemolition = lazy(() => import("./pages/ServiceDemolition"));
+const ServiceFoundationRepair = lazy(() => import("./pages/ServiceFoundationRepair"));
+const ServiceExteriorDrainage = lazy(() => import("./pages/ServiceExteriorDrainage"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -51,6 +53,8 @@ const App = () => {
                 <Route path="/services/basement-finishing" element={<ServiceBasementFinishing />} />
                 <Route path="/services/house-additions" element={<ServiceHouseAdditions />} />
                 <Route path="/services/demolition" element={<ServiceDemolition />} />
+                <Route path="/services/foundation-repair" element={<ServiceFoundationRepair />} />
+                <Route path="/services/exterior-drainage" element={<ServiceExteriorDrainage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
