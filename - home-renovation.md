@@ -1,0 +1,12 @@
+- home-renovation
+- basement-underpinning
+- basement-waterproofing
+- basement-finishing
+- house-additions
+- demolition
+- framing-structural
+- plumbing-electrical-hvac
+- insulation-drywall
+- flooring-finishes
+- cabinetry-fixtures
+- final-touches
