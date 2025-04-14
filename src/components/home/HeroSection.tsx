@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   return (
     <section className="relative">
-      <div className="hero-gradient h-[600px] md:h-[700px] relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+      <div className="h-[600px] md:h-[700px] relative overflow-hidden bg-[url('/images/services/home-renovation.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
         </div>
@@ -18,7 +18,7 @@ const HeroSection = () => {
               <Star className="text-brand-teal mr-2" size={24} fill="#33cb98" />
               <span className="text-brand-teal font-semibold tracking-wider">TRUSTED RENOVATION EXPERTS</span>
             </div>
-            <h1 className="text-white mb-6">Transform Your Home with Expert Renovation Services</h1>
+            <h1 className="text-5xl text-white mb-6">Transform Your Home with Expert Renovation Services</h1>
             <p className="text-xl mb-8 text-gray-100">
               Professional home renovation and basement underpinning services in Toronto and the GTA.
               We turn your vision into reality with quality craftsmanship.
@@ -31,7 +31,7 @@ const HeroSection = () => {
                 </Button>
               </Link>
               <Link to="/services">
-                <Button variant="outline" size="lg" className="bg-white/10 text-white border-white hover:bg-white/20 w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white w-full sm:w-auto">
                   Our Services
                 </Button>
               </Link>
