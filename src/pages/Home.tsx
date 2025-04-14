@@ -9,6 +9,11 @@ import {
   Hammer,
   Check,
   ChevronRight,
+  Lightbulb,
+  InspectionPanel,
+  Paintbrush,
+  LayersIcon,
+  Wrench,
   Star
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -112,7 +117,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceGroups.map((group) => (
               group.services.map((service, index) => (
-                <Link 
+                <Link
                   key={service.path}
                   to={service.path}
                   className="animate-on-scroll block h-full"
@@ -293,7 +298,7 @@ const serviceGroups = [
       {
         title: "Cabinetry & Fixtures",
         path: "/services/cabinetry-fixtures",
-        icon: <Tool className="w-5 h-5" />
+        icon: <InspectionPanel className="w-5 h-5" />
       },
       {
         title: "Flooring & Finishes",
