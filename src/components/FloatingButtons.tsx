@@ -53,7 +53,7 @@ const FloatingButtons = () => {
         </Button>
         
         <Button
-          className="rounded-full bg-brand-orange hover:bg-orange-600 w-12 h-12 p-3 shadow-md"
+          className="rounded-full bg-brand-teal hover:bg-orange-600 w-12 h-12 p-3 shadow-md"
           onClick={openQuoteModal}
           aria-label="Get a quote"
         >

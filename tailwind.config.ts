@@ -66,7 +66,6 @@ export default {
 				brand: {
 					blue: '#1E3A8A',
 					teal: '#33cb98',
-					orange: '#33cb98', // Changed from F97316 to keep references working
 					lightGray: '#F8FAFC',
 					darkGray: '#1F2937',
 				}

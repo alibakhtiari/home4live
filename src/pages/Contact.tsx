@@ -30,12 +30,12 @@ const ContactPage = () => {
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <Phone className="text-brand-orange" size={24} />
+                    <Phone className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+16478069089" className="hover:text-brand-orange transition-colors">
+                      <a href="tel:+16478069089" className="hover:text-brand-teal transition-colors">
                         +1 647-806-9089
                       </a>
                     </p>
@@ -44,12 +44,12 @@ const ContactPage = () => {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <Mail className="text-brand-orange" size={24} />
+                    <Mail className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Email</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@home4live.com" className="hover:text-brand-orange transition-colors">
+                      <a href="mailto:info@home4live.com" className="hover:text-brand-teal transition-colors">
                         info@home4live.com
                       </a>
                     </p>
@@ -58,7 +58,7 @@ const ContactPage = () => {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <MapPin className="text-brand-orange" size={24} />
+                    <MapPin className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Address</h3>
@@ -68,7 +68,7 @@ const ContactPage = () => {
                 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <Clock className="text-brand-orange" size={24} />
+                    <Clock className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Hours</h3>
