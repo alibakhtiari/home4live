@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ChevronRight, HomeIcon, Building, Droplets, PaintBucket, HardHat, Hammer, Wrench, Lightbulb, LayersIcon, Paintbrush, Tool } from 'lucide-react';
+import { Menu, X, Phone, ChevronRight, HomeIcon, Building, Droplets, PaintBucket, HardHat, Hammer, Wrench, Lightbulb, LayersIcon, Paintbrush, InspectionPanel } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   NavigationMenu,
@@ -39,7 +39,7 @@ const serviceGroups = [
       {
         title: "Cabinetry & Fixtures",
         path: "/services/cabinetry-fixtures",
-        icon: <Tool className="w-5 h-5" />
+        icon: <InspectionPanel className="w-5 h-5" />
       },
       {
         title: "Flooring & Finishes",
