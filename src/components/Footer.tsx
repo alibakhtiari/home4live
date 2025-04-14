@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const serviceLinks = [
-  { name: 'Home Renovation', path: '/services#home-renovation' },
-  { name: 'Basement Underpinning', path: '/services#basement-underpinning' },
-  { name: 'Basement Waterproofing', path: '/services#basement-waterproofing' },
-  { name: 'Basement Finishing', path: '/services#basement-finishing' },
-  { name: 'House Additions', path: '/services#house-additions' },
-  { name: 'Demolition', path: '/services#demolition' },
+  { name: 'Home Renovation', path: '/services/home-renovation' },
+  { name: 'Basement Underpinning', path: '/services/basement-underpinning' },
+  { name: 'Basement Waterproofing', path: '/services/basement-waterproofing' },
+  { name: 'Basement Finishing', path: '/services/basement-finishing' },
+  { name: 'House Additions', path: '/services/house-additions' },
+  { name: 'Demolition', path: '/services/demolition' },
 ];
 
 const Footer = () => {
@@ -116,13 +116,19 @@ const Footer = () => {
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6 text-sm text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-brand-orange transition-colors">Privacy Policy</a>
+                  <Link to="/privacy-policy" className="hover:text-brand-orange transition-colors">
+                    Privacy Policy
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-brand-orange transition-colors">Terms of Service</a>
+                  <Link to="/terms-of-service" className="hover:text-brand-orange transition-colors">
+                    Terms of Service
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-brand-orange transition-colors">Sitemap</a>
+                  <Link to="/sitemap" className="hover:text-brand-orange transition-colors">
+                    Sitemap
+                  </Link>
                 </li>
               </ul>
             </div>

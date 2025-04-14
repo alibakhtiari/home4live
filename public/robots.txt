@@ -1,53 +1,26 @@
 
-# Home4Live.com Robots.txt
-# Last updated: 2025-04-13
-
 # Allow all web crawlers
 User-agent: *
 Allow: /
 
-# Block specific directories
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /draft/
+# Main pages
+Allow: /index.html
+Allow: /about
+Allow: /services
+Allow: /contact
+
+# Service pages
+Allow: /services/home-renovation
+Allow: /services/basement-underpinning
+Allow: /services/basement-waterproofing
+Allow: /services/basement-finishing
+Allow: /services/house-additions
+Allow: /services/demolition
+
+# Legal pages
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /sitemap
 
 # Sitemap location
 Sitemap: https://home4live.com/sitemap.xml
-
-# Crawl-delay suggestion (not supported by all crawlers)
-Crawl-delay: 1
-
-# Google search crawlers - specific rules
-User-agent: Googlebot
-Allow: /
-User-agent: Googlebot-Image
-Allow: /
-User-agent: Googlebot-Mobile
-Allow: /
-User-agent: Googlebot-News
-Allow: /
-
-# Bing crawlers - specific rules
-User-agent: Bingbot
-Allow: /
-User-agent: MSNBot
-Allow: /
-
-# Social media crawlers - specific rules
-User-agent: Twitterbot
-Allow: /
-User-agent: facebookexternalhit
-Allow: /
-User-agent: LinkedInBot
-Allow: /
-User-agent: PinterestBot
-Allow: /
-
-# Allow API discovery but prevent excessive crawling
-User-agent: *
-Allow: /api/*.json$
-Disallow: /api/
-
-# Host directive (helps with canonical domains)
-Host: home4live.com

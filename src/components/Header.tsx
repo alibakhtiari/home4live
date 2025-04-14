@@ -15,6 +15,40 @@ import { cn } from '@/lib/utils';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import QuoteModal from './QuoteModal';
 
+// Services data for mega menu
+const services = [
+  {
+    title: "Home Renovation",
+    description: "Complete home renovation services for every room",
+    path: "/services/home-renovation"
+  },
+  {
+    title: "Basement Underpinning",
+    description: "Increase your basement ceiling height",
+    path: "/services/basement-underpinning"
+  },
+  {
+    title: "Basement Waterproofing",
+    description: "Protect your home from water damage",
+    path: "/services/basement-waterproofing"
+  },
+  {
+    title: "Basement Finishing",
+    description: "Convert your unfinished basement into a beautiful space",
+    path: "/services/basement-finishing"
+  },
+  {
+    title: "House Additions",
+    description: "Expand your home with custom additions",
+    path: "/services/house-additions"
+  },
+  {
+    title: "Demolition",
+    description: "Professional, safe and efficient demolition services",
+    path: "/services/demolition"
+  }
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -88,30 +122,16 @@ const Header = () => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid grid-cols-2 gap-3 p-6 w-[500px]">
-                      <Link to="/services/home-renovation" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">Home Renovation</h3>
-                        <p className="text-sm text-gray-500">Complete home renovation services for every room</p>
-                      </Link>
-                      <Link to="/services" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">Basement Underpinning</h3>
-                        <p className="text-sm text-gray-500">Increase your basement ceiling height</p>
-                      </Link>
-                      <Link to="/services" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">Basement Waterproofing</h3>
-                        <p className="text-sm text-gray-500">Protect your home from water damage</p>
-                      </Link>
-                      <Link to="/services" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">Basement Finishing</h3>
-                        <p className="text-sm text-gray-500">Convert your unfinished basement into a beautiful space</p>
-                      </Link>
-                      <Link to="/services" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">House Additions</h3>
-                        <p className="text-sm text-gray-500">Expand your home with custom additions</p>
-                      </Link>
-                      <Link to="/services" className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100">
-                        <h3 className="text-base font-medium text-brand-blue">Demolition</h3>
-                        <p className="text-sm text-gray-500">Professional, safe and efficient demolition services</p>
-                      </Link>
+                      {services.map((service) => (
+                        <Link 
+                          key={service.path}
+                          to={service.path} 
+                          className="group flex flex-col gap-1 rounded-md p-3 hover:bg-gray-100"
+                        >
+                          <h3 className="text-base font-medium text-brand-blue">{service.title}</h3>
+                          <p className="text-sm text-gray-500">{service.description}</p>
+                        </Link>
+                      ))}
                       <div className="col-span-2 mt-3 border-t pt-3">
                         <Link to="/services" className="flex items-center text-brand-blue hover:text-brand-orange font-medium">
                           View all services <ChevronDown className="ml-1 h-4 w-4" />
@@ -195,27 +215,16 @@ const Header = () => {
                   <span>Services</span>
                 </Link>
                 <div className="pl-6 mt-2 space-y-2">
-                  <Link 
-                    to="/services/home-renovation" 
-                    className="block font-medium text-sm text-brand-darkGray hover:text-brand-blue py-1 px-4 rounded-md hover:bg-gray-100 transition-colors"
-                    onClick={toggleMenu}
-                  >
-                    Home Renovation
-                  </Link>
-                  <Link 
-                    to="/services" 
-                    className="block font-medium text-sm text-brand-darkGray hover:text-brand-blue py-1 px-4 rounded-md hover:bg-gray-100 transition-colors"
-                    onClick={toggleMenu}
-                  >
-                    Basement Underpinning
-                  </Link>
-                  <Link 
-                    to="/services" 
-                    className="block font-medium text-sm text-brand-darkGray hover:text-brand-blue py-1 px-4 rounded-md hover:bg-gray-100 transition-colors"
-                    onClick={toggleMenu}
-                  >
-                    Basement Waterproofing
-                  </Link>
+                  {services.map((service) => (
+                    <Link 
+                      key={service.path}
+                      to={service.path} 
+                      className="block font-medium text-sm text-brand-darkGray hover:text-brand-blue py-1 px-4 rounded-md hover:bg-gray-100 transition-colors"
+                      onClick={toggleMenu}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
                 </div>
               </div>
               
