@@ -141,6 +141,7 @@ const Header = () => {
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center z-20">
+            <img src="/logo.svg" alt="Home4Live Logo" className="h-12 mr-2" />
             <span className={cn(
               "text-2xl font-bold transition-colors",
               (scrolled || shouldBeNonTransparent) ? "text-brand-blue" : "text-white"
