@@ -51,15 +51,15 @@ const ServicesList: React.FC<ServicesListProps> = ({ services }) => {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {services.map((service) => (
-            <motion.div key={service.id} variants={itemVariants} className="h-full">
-              <Link to={`/services/${service.id}`} className="h-full block">
+            <motion.div key={service.id} variants={itemVariants}>
+              <Link to={`/services/${service.id}`}>
                 <ServiceCard
                   title={service.title}
                   description={service.description}
