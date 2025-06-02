@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
@@ -16,73 +15,73 @@ const services: Service[] = [
     id: 'home-renovation',
     title: 'Home Renovation',
     description: "Complete home renovation services that transform your living spaces",
-    imageSrc: '/images/services/home-renovation.jpg'
+    imageSrc: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'
   },
   {
     id: 'basement-underpinning',
     title: 'Basement Underpinning',
     description: "Increase your basement ceiling height and create additional living space",
-    imageSrc: '/images/services/basement-underpinning.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'basement-waterproofing',
     title: 'Basement Waterproofing',
     description: "Professional waterproofing solutions for a dry and healthy basement",
-    imageSrc: '/images/services/basement-waterproofing.jpg'
+    imageSrc: 'https://images.pexels.com/photos/5490778/pexels-photo-5490778.jpeg'
   },
   {
     id: 'basement-finishing',
     title: 'Basement Finishing',
     description: "Transform your unfinished basement into a beautiful living space",
-    imageSrc: '/images/services/basement-finishing.jpg'
+    imageSrc: 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'
   },
   {
     id: 'house-additions',
     title: 'House Additions',
     description: "Expand your living space with custom house additions",
-    imageSrc: '/images/services/house-additions.jpg'
+    imageSrc: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg'
   },
   {
     id: 'demolition',
     title: 'Demolition',
     description: "Professional and safe demolition services",
-    imageSrc: '/images/services/demolition.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'framing-structural',
     title: 'Framing & Structural Work',
     description: "Expert framing and structural modifications",
-    imageSrc: '/images/services/framing-structural.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'plumbing-electrical-hvac',
     title: 'Plumbing, Electrical & HVAC',
     description: "Complete mechanical systems installation and upgrades",
-    imageSrc: '/images/services/plumbing-electrical-hvac.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'insulation-drywall',
     title: 'Insulation & Drywall',
     description: "Professional insulation and drywall installation",
-    imageSrc: '/images/services/insulation-drywall.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'flooring-finishes',
     title: 'Flooring & Finishes',
     description: "High-quality flooring installation and finishing services",
-    imageSrc: '/images/services/flooring-finishes.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'cabinetry-fixtures',
     title: 'Cabinetry & Fixtures',
     description: "Custom cabinetry and fixture installation",
-    imageSrc: '/images/services/cabinetry-fixtures.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   },
   {
     id: 'final-touches',
     title: 'Final Touches & Clean-up',
     description: "Meticulous final touches and thorough clean-up services",
-    imageSrc: '/images/services/final-touches.jpg'
+    imageSrc: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg'
   }
 ];
 

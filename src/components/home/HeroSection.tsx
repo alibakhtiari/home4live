@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Check, Star } from 'lucide-react';
@@ -7,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   return (
     <section className="relative">
-      <div className="h-[600px] md:h-[700px] relative overflow-hidden bg-[url('/images/services/home-renovation.jpg')] bg-cover bg-center">
+      <div className="h-[600px] md:h-[700px] relative overflow-hidden bg-[url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
