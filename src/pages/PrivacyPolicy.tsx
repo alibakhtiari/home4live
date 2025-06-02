@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
                 You have several choices regarding the use of information on our services:
               </p>
               <ul>
-                <li><strong>Account Information:</strong> You may update, correct, or delete your information at any time by contacting us at info@home4live.com.</li>
+                <li><strong>Account Information:</strong> You may update, correct, or delete your information at any time by contacting us at info@home4live.ca.</li>
                 <li><strong>Cookies:</strong> Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies.</li>
                 <li><strong>Promotional Communications:</strong> You may opt out of receiving promotional emails from Home4Live by following the instructions in those emails. If you opt out, we may still send you non-promotional emails, such as those about your account or our ongoing business relations.</li>
               </ul>
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <p>
-                Email: info@home4live.com<br />
+                Email: info@home4live.ca<br />
                 Phone: 647-806-9089<br />
                 Address: Richmond Hill, ON, Canada
               </p>

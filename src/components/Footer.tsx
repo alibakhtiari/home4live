@@ -100,8 +100,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 text-brand-teal" />
-                <a href="mailto:info@home4live.com" className="hover:text-brand-teal transition-colors">
-                  info@home4live.com
+                <a href="mailto:info@home4live.ca" className="hover:text-brand-teal transition-colors">
+                  info@home4live.ca
                 </a>
               </li>
             </ul>

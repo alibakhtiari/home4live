@@ -41,8 +41,8 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Home4Live",
-          "url": "https://home4live.com",
-          "logo": "https://home4live.com/logo.png",
+          "url": "https://home4live.ca",
+          "logo": "https://home4live.ca/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+16478069089",

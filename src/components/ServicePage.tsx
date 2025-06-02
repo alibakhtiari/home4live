@@ -106,7 +106,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
         title="Frequently Asked Questions"
         subtitle={`Common questions about our ${title.toLowerCase()} services`}
         faqs={faqs}
-        schemaId={`https://home4live.com/services/${id}#faq`}
+        schemaId={`https://home4live.ca/services/${id}#faq`}
       />
 
       {/* Related Services */}

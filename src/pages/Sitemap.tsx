@@ -125,19 +125,19 @@ const Sitemap = () => {
               "@type": "ListItem",
               "position": index + 1,
               "name": page.name,
-              "item": `https://home4live.com${page.path}`
+              "item": `https://home4live.ca${page.path}`
             })),
             ...services.map((service, index) => ({
               "@type": "ListItem",
               "position": pages.length + index + 1,
               "name": service.name,
-              "item": `https://home4live.com${service.path}`
+              "item": `https://home4live.ca${service.path}`
             })),
             ...legalPages.map((page, index) => ({
               "@type": "ListItem",
               "position": pages.length + services.length + index + 1,
               "name": page.name,
-              "item": `https://home4live.com${page.path}`
+              "item": `https://home4live.ca${page.path}`
             }))
           ]
         })}

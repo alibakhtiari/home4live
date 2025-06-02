@@ -30,7 +30,7 @@ const SEO: React.FC<SEOProps> = ({
   const pageTitle = `${title} | ${siteName}`;
   
   // Full canonical URL
-  const fullCanonicalUrl = canonicalUrl ? `https://home4live.com${canonicalUrl}` : undefined;
+  const fullCanonicalUrl = canonicalUrl ? `https://home4live.ca${canonicalUrl}` : undefined;
   
   return (
     <Helmet>
@@ -48,13 +48,13 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteName} />
       {fullCanonicalUrl && <meta property="og:url" content={fullCanonicalUrl} />}
-      {ogImage && <meta property="og:image" content={`https://home4live.com${ogImage}`} />}
+      {ogImage && <meta property="og:image" content={`https://home4live.ca${ogImage}`} />}
       
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={`https://home4live.com${ogImage}`} />}
+      {ogImage && <meta name="twitter:image" content={`https://home4live.ca${ogImage}`} />}
       
       {/* Structured Data / JSON-LD */}
       {structuredData && (
