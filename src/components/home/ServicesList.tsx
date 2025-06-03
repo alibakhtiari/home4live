@@ -15,31 +15,31 @@ const services: Service[] = [
     id: 'home-renovation',
     title: 'Home Renovation',
     description: "Complete home renovation services that transform your living spaces",
-    imageSrc: '/images/services/home-renovation.jpg'
+    imageSrc: '/images/home-renovation.jpg'
   },
   {
     id: 'basement-underpinning',
     title: 'Basement Underpinning',
     description: "Increase your basement ceiling height and create additional living space",
-    imageSrc: '/images/basment underpinning/1.webp'
+    imageSrc: '/images/basment-underpinning/1.webp'
   },
   {
     id: 'basement-waterproofing',
     title: 'Basement Waterproofing',
     description: "Professional waterproofing solutions for a dry and healthy basement",
-    imageSrc: '/images/basment underpinning/2.webp'
+    imageSrc: '/images/basment-underpinning/2.webp'
   },
   {
     id: 'basement-finishing',
     title: 'Basement Finishing',
     description: "Transform your unfinished basement into a beautiful living space",
-    imageSrc: '/images/basement finishing/1.webp'
+    imageSrc: '/images/basement-finishing/1.webp'
   },
   {
     id: 'house-additions',
     title: 'House Additions',
     description: "Expand your living space with custom house additions",
-    imageSrc: '/images/house additions/1.webp'
+    imageSrc: '/images/house-additions/1.webp'
   },
   {
     id: 'demolition',
@@ -63,7 +63,7 @@ const services: Service[] = [
     id: 'insulation-drywall',
     title: 'Insulation & Drywall',
     description: "Professional insulation and drywall installation",
-    imageSrc: '/images/insulation drywall taping/1.webp'
+    imageSrc: '/images/insulation-drywall-taping/1.webp'
   },
   {
     id: 'flooring-finishes',
@@ -75,7 +75,7 @@ const services: Service[] = [
     id: 'cabinetry-fixtures',
     title: 'Cabinetry & Fixtures',
     description: "Custom cabinetry and fixture installation",
-    imageSrc: '/images/cabinetry fixtures & kitchen/1.webp'
+    imageSrc: '/images/cabinetry-fixtures-kitchen/1.webp'
   },
   {
     id: 'final-touches',
