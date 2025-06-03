@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import ResponsiveImage from '@/components/ResponsiveImage';
 
 interface ServiceCardProps {
   title: string;
@@ -20,7 +19,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <div className="flex flex-col justify-between bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group overflow-hidden">
       <div>
         <div className="relative h-48 w-full overflow-hidden">
-          <ResponsiveImage
+          <img
             src={imageSrc}
             alt={title}
             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
