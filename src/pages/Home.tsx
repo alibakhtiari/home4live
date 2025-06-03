@@ -37,7 +37,7 @@ const HomePage = () => {
       <HeroSection />
       <ServicesList />
       <WhyChooseUs />
-      
+
       {/* Testimonials Section */}
       <section className="section bg-gray-50">
         <div className="container-custom">
@@ -50,9 +50,9 @@ const HomePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {testimonials.map((testimonial, index) => (
-              <div 
+              <div
                 key={testimonial.name}
-                className="animate-on-scroll" 
+                className="animate-on-scroll"
                 style={{ transitionDelay: `${(index + 1) * 0.1}s` }}
               >
                 <TestimonialCard {...testimonial} />
