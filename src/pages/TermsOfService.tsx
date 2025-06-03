@@ -30,7 +30,7 @@ const TermsOfService = () => {
               
               <h2>Acceptance of Terms</h2>
               <p>
-                By accessing or using our website at www.home4live.com (the "Site") or our renovation and construction services (collectively, the "Services"), you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Services.
+                By accessing or using our website at www.home4live.ca (the "Site") or our renovation and construction services (collectively, the "Services"), you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Services.
               </p>
               
               <h2>Changes to Terms</h2>
@@ -110,7 +110,7 @@ const TermsOfService = () => {
                 If you have any questions about these Terms, please contact us at:
               </p>
               <p>
-                Email: info@home4live.com<br />
+                Email: info@home4live.ca<br />
                 Phone: 647-806-9089<br />
                 Address: Richmond Hill, ON, Canada
               </p>

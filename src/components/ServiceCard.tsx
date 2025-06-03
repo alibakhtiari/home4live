@@ -5,21 +5,25 @@ import { ChevronRight } from 'lucide-react';
 interface ServiceCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  imageSrc: string;
   className?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
-  icon,
+  imageSrc,
   className
 }) => {
   return (
     <div className={`flex flex-col justify-between bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group ${className}`}>
       <div>
         <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-          {icon}
+        <img
+            src={imageSrc}
+            alt={title}
+            className="w-full h-full object-cover rounded-full"
+        />
         </div>
         <h3 className="text-xl font-bold mb-3 group-hover:text-brand-blue transition-colors">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>

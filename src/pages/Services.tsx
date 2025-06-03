@@ -149,7 +149,7 @@ const ServicesPage = () => {
         <title>Professional Home Renovation Services | Toronto & GTA | Home4Live</title>
         <meta name="description" content="Expert renovation services in Toronto including basement underpinning, waterproofing, finishing, home additions, and complete home renovations. Free consultations." />
         <meta name="keywords" content="home renovation, basement underpinning, basement waterproofing, basement finishing, house additions, Toronto renovations" />
-        <link rel="canonical" href="https://home4live.com/services" />
+        <link rel="canonical" href="https://home4live.ca/services" />
         <script type="application/ld+json">
           {`
             {
@@ -157,8 +157,8 @@ const ServicesPage = () => {
               "@type": "ProfessionalService",
               "name": "Home4Live Renovation Services",
               "description": "Professional home renovation and construction services in Toronto and the Greater Toronto Area",
-              "url": "https://home4live.com/services",
-              "logo": "https://home4live.com/logo.png",
+              "url": "https://home4live.ca/services",
+              "logo": "https://home4live.ca/logo.png",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Toronto",
@@ -183,7 +183,7 @@ const ServicesPage = () => {
                       "itemOffered": {
                         "@type": "Service",
                         "name": "${service.title}",
-                        "url": "https://home4live.com/services/${service.id}"
+                        "url": "https://home4live.ca/services/${service.id}"
                       }
                     }${index < services.length - 1 ? ',' : ''}
                   `).join('')}

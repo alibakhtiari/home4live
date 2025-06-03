@@ -95,11 +95,11 @@ const Gallery: React.FC<GalleryProps> = ({
                       loading="lazy"
                     />
                   </div>
-                  {image.caption && (
+                  {/* {image.caption && (
                     <div className="p-4 text-center">
                       <p className="text-sm text-gray-600">{image.caption}</p>
                     </div>
-                  )}
+                  )} */}
                 </CardContent>
               </Card>
             </motion.div>

@@ -30,4 +30,4 @@ Allow: /terms-of-service
 Allow: /sitemap
 
 # Sitemap location
-Sitemap: https://home4live.com/sitemap.xml
+Sitemap: https://home4live.ca/sitemap.xml

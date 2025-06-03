@@ -30,13 +30,11 @@ const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps }) => {
         </div>
 
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-brand-teal hidden md:block" style={{ transform: 'translateX(-50%)' }}></div>
-          
+
           {/* Process Steps */}
           <div className="space-y-24">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="flex flex-col md:flex-row items-center md:items-start gap-8"
                 initial={{ opacity: 0, y: 50 }}
