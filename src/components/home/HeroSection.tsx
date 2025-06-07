@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   return (
     <section className="relative">
-      <div className="h-full md:h-[700px] relative overflow-hidden bg-[url('/images/home-renovation.webp')] bg-cover bg-center pb-8 pt-24">
+      <div className="h-full md:h-[700px] relative overflow-hidden bg-[url('/images/home-renovation.webp')] bg-cover bg-center pb-8 pt-24 lg:py-8">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern"></div>
