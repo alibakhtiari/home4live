@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import ResponsiveImage from '../ResponsiveImage';
 
 interface ServiceCardProps {
   title: string;
@@ -24,6 +25,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             alt={title}
             className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
           />
+           {/* <ResponsiveImage
+          src={imageSrc}
+          alt={title}
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+        /> */}
         </div>
         <div className="p-6">
           <h3 className="text-xl font-bold mb-3 group-hover:text-brand-blue transition-colors">{title}</h3>
