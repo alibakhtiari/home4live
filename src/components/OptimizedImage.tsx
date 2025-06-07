@@ -25,7 +25,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState<string>('');
 
-  // Generate responsive image URLs
+  // Generate responsive image URLs with proper sizing
   const generateResponsiveUrls = (baseSrc: string) => {
     // Check if it's an external URL
     if (baseSrc.startsWith('http')) {
@@ -36,15 +36,15 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       };
     }
 
-    // For local images, generate different sizes
+    // For local images, generate different sizes with proper responsive sizing
     const cleanSrc = baseSrc.startsWith('/') ? baseSrc.substring(1) : baseSrc;
     const pathParts = cleanSrc.split('.');
     const extension = pathParts.pop() || 'jpg';
     const basePath = pathParts.join('.');
 
-    // Check if WebP version exists, otherwise use original
-    const webpSrcSet = `/${basePath}.webp?w=320 320w, /${basePath}.webp?w=640 640w, /${basePath}.webp?w=1280 1280w, /${basePath}.webp?w=1920 1920w`;
-    const fallbackSrcSet = `/${basePath}.${extension}?w=320 320w, /${basePath}.${extension}?w=640 640w, /${basePath}.${extension}?w=1280 1280w, /${basePath}.${extension}?w=1920 1920w`;
+    // Generate srcsets with appropriate sizes for better performance
+    const webpSrcSet = `/${basePath}.webp?w=320 320w, /${basePath}.webp?w=640 640w, /${basePath}.webp?w=800 800w, /${basePath}.webp?w=1200 1200w`;
+    const fallbackSrcSet = `/${basePath}.${extension}?w=320 320w, /${basePath}.${extension}?w=640 640w, /${basePath}.${extension}?w=800 800w, /${basePath}.${extension}?w=1200 1200w`;
 
     return {
       webp: `/${basePath}.webp`,
@@ -58,13 +58,13 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     const urls = generateResponsiveUrls(src);
     setImageSrc(urls.fallback);
 
-    // Preload critical images
+    // Preload critical images with proper cache headers
     if (priority) {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
       link.href = urls.webp;
-      link.fetchPriority = 'high';
+      link.crossOrigin = 'anonymous';
       document.head.appendChild(link);
     }
   }, [src, priority]);

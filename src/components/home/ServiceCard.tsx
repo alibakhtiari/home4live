@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             alt={`${title} - Professional renovation service showcase`}
             className="group-hover:scale-105 transition-transform duration-300"
             objectFit="cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 378px"
           />
         </div>
         <div className="p-6">
