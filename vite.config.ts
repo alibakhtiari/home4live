@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     imagetools({
       defaultDirectives: new URLSearchParams(
-        'format=webp;avif;jpg;png&w=320;640;800;1200;1920&as=picture'
+        'format=webp;avif;jpg;png&w=320;640;800&quality=75&as=picture'
       )
     }),
     ViteImageOptimizer({
@@ -55,19 +55,19 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       png: {
-        quality: 80,
+        quality: 75,
       },
       jpeg: {
-        quality: 80,
+        quality: 75,
       },
       jpg: {
-        quality: 80,
+        quality: 75,
       },
       webp: {
-        quality: 80,
+        quality: 75,
       },
       avif: {
-        quality: 75,
+        quality: 70,
       },
     }),
   ].filter(Boolean),
@@ -82,7 +82,8 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['lucide-react', 'framer-motion'],
+          ui: ['lucide-react'],
+          motion: ['framer-motion'],
           images: ['vite-imagetools'],
         },
         assetFileNames: (assetInfo) => {
@@ -96,5 +97,16 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000,
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
+  },
+  css: {
+    devSourcemap: false,
   },
 }));

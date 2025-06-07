@@ -32,11 +32,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({
     <section className="section bg-gray-50" id="faq">
       <div className="container-custom">
         <motion.div 
-          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
           <h2 className="mb-4">{title}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">{subtitle}</p>

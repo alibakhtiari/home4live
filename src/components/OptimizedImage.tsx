@@ -19,13 +19,13 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   width,
   height,
   priority = false,
-  sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
+  sizes = '(max-width: 640px) 320px, (max-width: 1024px) 640px, 800px',
   objectFit = 'cover'
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageSrc, setImageSrc] = useState<string>('');
 
-  // Generate responsive image URLs with proper sizing
+  // Generate responsive image URLs with optimized sizing
   const generateResponsiveUrls = (baseSrc: string) => {
     // Check if it's an external URL
     if (baseSrc.startsWith('http')) {
@@ -36,19 +36,19 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       };
     }
 
-    // For local images, generate different sizes with proper responsive sizing
+    // For local images, generate different sizes with better optimization
     const cleanSrc = baseSrc.startsWith('/') ? baseSrc.substring(1) : baseSrc;
     const pathParts = cleanSrc.split('.');
     const extension = pathParts.pop() || 'jpg';
     const basePath = pathParts.join('.');
 
-    // Generate srcsets with appropriate sizes for better performance
-    const webpSrcSet = `/${basePath}.webp?w=320 320w, /${basePath}.webp?w=640 640w, /${basePath}.webp?w=800 800w, /${basePath}.webp?w=1200 1200w`;
-    const fallbackSrcSet = `/${basePath}.${extension}?w=320 320w, /${basePath}.${extension}?w=640 640w, /${basePath}.${extension}?w=800 800w, /${basePath}.${extension}?w=1200 1200w`;
+    // Generate srcsets with smaller, more appropriate sizes
+    const webpSrcSet = `/${basePath}.webp?w=320 320w, /${basePath}.webp?w=640 640w, /${basePath}.webp?w=800 800w`;
+    const fallbackSrcSet = `/${basePath}.${extension}?w=320 320w, /${basePath}.${extension}?w=640 640w, /${basePath}.${extension}?w=800 800w`;
 
     return {
-      webp: `/${basePath}.webp`,
-      fallback: `/${basePath}.${extension}`,
+      webp: `/${basePath}.webp?w=800`,
+      fallback: `/${basePath}.${extension}?w=800`,
       webpSrcSet,
       fallbackSrcSet
     };
@@ -58,7 +58,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     const urls = generateResponsiveUrls(src);
     setImageSrc(urls.fallback);
 
-    // Preload critical images with proper cache headers
+    // Preload critical images
     if (priority) {
       const link = document.createElement('link');
       link.rel = 'preload';
@@ -93,7 +93,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         fetchPriority={priority ? 'high' : 'auto'}
         onLoad={() => setIsLoaded(true)}
         onError={() => {
-          // Fallback to original format if WebP fails
           setImageSrc(src);
         }}
       />
