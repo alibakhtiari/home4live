@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import OptimizedImage from '@/components/OptimizedImage';
 
 interface ServiceCardProps {
   title: string;
@@ -16,13 +17,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   to
 }) => {
   return (
-    <div className="flex flex-col justify-between bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group overflow-hidden">
+    <article className="flex flex-col justify-between bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group overflow-hidden">
       <div>
         <div className="relative h-48 w-full overflow-hidden">
-          <img
+          <OptimizedImage
             src={imageSrc}
-            alt={title}
-            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            alt={`${title} - Professional renovation service showcase`}
+            className="group-hover:scale-105 transition-transform duration-300"
+            objectFit="cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <div className="p-6">
@@ -32,10 +35,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       </div>
       <div className="px-6 pb-6">
         <div className="inline-flex items-center text-brand-blue font-medium group-hover:text-brand-teal transition-colors">
-          Learn More <ChevronRight size={16} className="ml-1" />
+          Learn More <ChevronRight size={16} className="ml-1" aria-hidden="true" />
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

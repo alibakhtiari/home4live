@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     imagetools({
       defaultDirectives: new URLSearchParams(
-        'format=webp;webp;png;avif&w=1920;1280;640;320&as=picture'
+        'format=webp;avif;jpg;png&w=320;640;1280;1920&as=picture'
       )
     }),
     ViteImageOptimizer({
@@ -55,25 +55,36 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       png: {
-        quality: 80,
+        quality: 85,
       },
       jpeg: {
-        quality: 80,
+        quality: 85,
       },
       jpg: {
-        quality: 80,
+        quality: 85,
       },
       webp: {
-        lossless: true,
+        quality: 85,
       },
       avif: {
-        lossless: true, 
+        quality: 80,
       },
     }),
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['lucide-react', 'framer-motion'],
+        },
+      },
     },
   },
 }));

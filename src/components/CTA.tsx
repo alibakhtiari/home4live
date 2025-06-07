@@ -1,42 +1,44 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
-import { Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
 
-interface CTAProps {
-  title?: string;
-}
-
-const CTA: React.FC<CTAProps> = ({
-  title = "Ready to start your project?"
-}) => {
+const CTA = () => {
   return (
-  <section className="bg-white py-8 md:py-12">
-    <div className="container-custom bg-gray-100 rounded-lg p-8 md:p-12 shadow-md">
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="mb-6 md:mb-0">
-          <h2 className="text-2xl font-bold mb-2">{title}</h2>
-          <p className="text-gray-600">Contact us today for a free consultation and estimate</p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link to="/contact">
-            <Button variant="default" className="bg-brand-teal hover:bg-teal-600 w-full sm:w-auto">
-              Get a Free Quote
-            </Button>
-          </Link>
-          <a href="tel:+16478069089" className="inline-flex items-center justify-center">
-            <Button variant="outline" className="border-brand-teal text-brand-teal hover:bg-brand-teal hover:text-white w-full sm:w-auto">
-              <Phone className="mr-2" size={18} />
-              Call Us Now
-            </Button>
-          </a>
+    <section className="bg-brand-blue py-16">
+      <div className="container-custom text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-white mb-4">Ready to Transform Your Home?</h2>
+          <p className="text-xl text-gray-200 mb-8">
+            Get your free consultation today and start your renovation journey with Toronto's trusted experts.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/contact" aria-label="Get a free quote for your renovation project">
+              <button 
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-brand-teal text-white hover:bg-teal-600 h-11 px-8 w-full sm:w-auto"
+                aria-label="Get a Free Quote - Contact us for your renovation needs"
+              >
+                Get a Free Quote
+                <ArrowRight className="ml-2" size={16} aria-hidden="true" />
+              </button>
+            </Link>
+            <a 
+              href="tel:+16478069089" 
+              aria-label="Call us now at 647-806-9089 for immediate assistance"
+            >
+              <button 
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white bg-transparent text-white hover:bg-white hover:text-brand-blue h-11 px-8 w-full sm:w-auto"
+                aria-label="Call Us Now - Speak directly with our renovation experts"
+              >
+                <Phone className="mr-2" size={16} aria-hidden="true" />
+                Call Us Now
+              </button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
-
-}
+};
 
 export default CTA;

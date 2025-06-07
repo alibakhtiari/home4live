@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Layout from '@/components/Layout';
 import CTA from '@/components/CTA';
@@ -6,12 +5,21 @@ import HeroSection from '@/components/home/HeroSection';
 import ServicesList from '@/components/home/ServicesList';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import TestimonialCard from '@/components/TestimonialCard';
+import SEO from '@/components/SEO';
 
 const HomePage = () => {
   // Animation observer for scroll animations
   const animatedElementsRef = useRef<NodeListOf<Element> | null>(null);
 
   useEffect(() => {
+    // Preload critical hero image for LCP optimization
+    const heroImageLink = document.createElement('link');
+    heroImageLink.rel = 'preload';
+    heroImageLink.as = 'image';
+    heroImageLink.href = '/images/home-renovation.webp';
+    heroImageLink.fetchPriority = 'high';
+    document.head.appendChild(heroImageLink);
+
     // Initialize animation on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -34,6 +42,30 @@ const HomePage = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Home4Live | Professional Home Renovation Services in Toronto & GTA"
+        description="Transform your home with expert renovation services. Basement underpinning, waterproofing, finishing, and complete home renovations in Toronto and GTA."
+        canonicalUrl="/"
+        keywords="home renovation, basement underpinning, basement waterproofing, Toronto renovations, GTA home renovation"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Home4Live",
+          "url": "https://home4live.ca",
+          "logo": "https://home4live.ca/logo.svg",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+16478069089",
+            "contactType": "customer service"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Richmond Hill",
+            "addressRegion": "ON",
+            "addressCountry": "CA"
+          }
+        }}
+      />
       <HeroSection />
       <ServicesList />
       <WhyChooseUs />
