@@ -25,14 +25,25 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message.');
+      }
+
       toast({
-        title: "Message Sent!",
+        title: 'Message Sent!',
         description: "Thank you for contacting us. We'll get back to you shortly.",
       });
-      
+
       setFormData({
         name: '',
         email: '',
@@ -40,9 +51,15 @@ const ContactForm = () => {
         service: '',
         message: '',
       });
-      
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'There was a problem sending your message. Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
