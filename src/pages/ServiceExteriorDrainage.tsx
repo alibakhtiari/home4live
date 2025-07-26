@@ -121,38 +121,7 @@ const ServiceExteriorDrainage = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1565809446861-57289f7bde4e",
-            alt: "French drain installation process",
-            caption: "Professional French Drain Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1619362280026-6c605548bc74",
-            alt: "Surface drain installation in yard",
-            caption: "Surface Drainage System"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1567359399521-bb228e53e085",
-            alt: "Downspout extension and burial",
-            caption: "Downspout Management System"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f",
-            alt: "Yard grading and drainage improvement",
-            caption: "Professional Grading Service"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1516722658162-2cd9bdad232a",
-            alt: "Yard drainage system with catch basins",
-            caption: "Complete Yard Drainage Solution"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1523867574998-1a336b0b1b0e",
-            alt: "Properly drained and landscaped yard",
-            caption: "Completed Drainage and Landscaping"
-          }
-        ]}
+        galleryFolder="exterior-drainage"
         faqs={[
           {
             question: "How can I tell if my property needs improved exterior drainage?",

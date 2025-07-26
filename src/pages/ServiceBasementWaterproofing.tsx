@@ -7,7 +7,7 @@ import SEO from '@/components/SEO';
 const ServiceBasementWaterproofing = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="Basement Waterproofing Services in Toronto & GTA | Home4Live"
         description="Professional basement waterproofing solutions to protect your home from water damage. Interior and exterior waterproofing throughout Toronto and the GTA."
         canonicalUrl="/services/basement-waterproofing"
@@ -121,38 +121,8 @@ const ServiceBasementWaterproofing = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1578301978162-7aae4d755744",
-            alt: "Exterior waterproofing membrane installation",
-            caption: "Exterior Waterproofing Process"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb38",
-            alt: "Interior drainage system installation",
-            caption: "Interior Drainage System"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1582140161538-aaa5bd49afa2",
-            alt: "Professional foundation crack repair",
-            caption: "Foundation Crack Repair"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f",
-            alt: "Sump pump installation with battery backup",
-            caption: "Sump Pump Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517490232338-06b0989e8bf9",
-            alt: "Exterior grading and drainage improvements",
-            caption: "Exterior Drainage Solutions"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8",
-            alt: "Dry, waterproofed basement",
-            caption: "Dry, Protected Basement"
-          }
-        ]}
+        galleryFolder="basement-waterproofing"
+
         faqs={[
           {
             question: "How can I tell if my basement needs waterproofing?",

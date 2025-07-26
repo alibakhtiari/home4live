@@ -120,38 +120,7 @@ const ServiceFramingStructural = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1581094374631-397188e63af8",
-            alt: "House framing construction",
-            caption: "New Wall Framing"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1621818225570-ff08ff300b7b",
-            alt: "Steel beam installation",
-            caption: "Support Beam Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb38",
-            alt: "Construction worker measuring framing",
-            caption: "Precision Framing"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1582540730843-f4418d96ccbe",
-            alt: "Home renovation structural work",
-            caption: "Structural Reinforcement"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1593313637552-29c198e30d34",
-            alt: "House interior framing",
-            caption: "Interior Wall Framing"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1542621334-a254cf47733d",
-            alt: "Roof framing construction",
-            caption: "Roof Support Framing"
-          }
-        ]}
+        galleryFolder="framing"
         faqs={[
           {
             question: "How do I know if a wall is load-bearing?",

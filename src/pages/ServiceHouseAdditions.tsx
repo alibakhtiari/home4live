@@ -121,38 +121,7 @@ const ServiceHouseAdditions = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-            alt: "Two-story home with new addition",
-            caption: "Seamless Two-Story Addition"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-            alt: "Kitchen extension with large windows",
-            caption: "Bright Kitchen Extension"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
-            alt: "Primary bedroom suite addition",
-            caption: "Spacious Primary Suite Addition"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
-            alt: "Modern sunroom addition",
-            caption: "Light-Filled Sunroom Addition"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e",
-            alt: "Home office addition with custom built-ins",
-            caption: "Productive Home Office Addition"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
-            alt: "In-law suite addition",
-            caption: "Comfortable In-Law Suite"
-          }
-        ]}
+        galleryFolder="house-additions"
         faqs={[
           {
             question: "How much does a house addition cost in the Toronto area?",

@@ -95,28 +95,7 @@ const ServiceInsulationDrywall = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a",
-            alt: "Insulation installation",
-            caption: "Professional installation of high-performance insulation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
-            alt: "Drywall installation",
-            caption: "Precise drywall installation for a perfect finish"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937",
-            alt: "Insulation in walls",
-            caption: "Wall cavity insulation for improved energy efficiency"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1527576539890-dfa815648363",
-            alt: "Finished drywall",
-            caption: "Smooth, finished drywall ready for painting"
-          }
-        ]}
+        galleryFolder="insulation-drywall-taping"
         faqs={[
           {
             question: "What type of insulation is best for my home?",

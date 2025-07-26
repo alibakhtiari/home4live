@@ -120,38 +120,7 @@ const ServiceFinalTouches = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-            alt: "Final touches in kitchen renovation",
-            caption: "Kitchen Final Detailing"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1586105251261-72a756497a11",
-            alt: "Professional cleaning after renovation",
-            caption: "Post-Renovation Cleaning"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1484154218962-a197022b5858",
-            alt: "Completed kitchen after final touches",
-            caption: "Completed Kitchen Renovation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1603794067602-9feaa4f70e0c",
-            alt: "Bathroom after final clean-up",
-            caption: "Bathroom After Final Touches"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c",
-            alt: "Paint touch-up process",
-            caption: "Professional Paint Touch-ups"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1605117882932-f9e32b3c9dea",
-            alt: "Completed living room after clean-up",
-            caption: "Completed Living Space"
-          }
-        ]}
+        galleryFolder="final-touch"
         faqs={[
           {
             question: "How long does the final touches and clean-up process typically take?",

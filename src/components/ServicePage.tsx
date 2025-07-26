@@ -36,11 +36,7 @@ interface ServicePageProps {
       items: string[];
     };
   };
-  galleryImages: {
-    src: string;
-    alt: string;
-    caption?: string;
-  }[];
+  galleryFolder: string;
   faqs: {
     question: string;
     answer: string;
@@ -54,7 +50,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
   description,
   icon,
   content,
-  galleryImages,
+  galleryFolder,
   faqs,
   relatedServices
 }) => {
@@ -96,9 +92,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
 
       {/* Gallery Section */}
       <Gallery
-        title="Our Recent Work"
-        subtitle={`See our recent ${title.toLowerCase()} projects`}
-        images={galleryImages}
+        folder={galleryFolder}
       />
 
       {/* FAQ Section */}

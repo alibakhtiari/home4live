@@ -120,38 +120,7 @@ const ServiceFlooringFinishes = () => {
                         ]
                     }
                 }}
-                galleryImages={[
-                    {
-                        src: "https://images.unsplash.com/photo-1581166397057-235af2b3c6dd",
-                        alt: "Hardwood flooring installation",
-                        caption: "Premium Hardwood Installation"
-                    },
-                    {
-                        src: "https://images.unsplash.com/photo-1575652671271-0b547b94a592",
-                        alt: "Luxury vinyl plank flooring",
-                        caption: "Luxury Vinyl Plank Flooring"
-                    },
-                    {
-                        src: "https://images.unsplash.com/photo-1600607686527-6fb886090705",
-                        alt: "Ceramic tile bathroom floor",
-                        caption: "Bathroom Tile Installation"
-                    },
-                    {
-                        src: "https://images.unsplash.com/photo-1597750955232-b8a0640cbf9c",
-                        alt: "Modern kitchen with tile flooring",
-                        caption: "Kitchen Floor Renovation"
-                    },
-                    {
-                        src: "https://images.unsplash.com/photo-1580800890805-fd45e12fc56a",
-                        alt: "Living room with engineered hardwood",
-                        caption: "Living Room Flooring Update"
-                    },
-                    {
-                        src: "https://images.unsplash.com/photo-1622127922040-13cab637ee78",
-                        alt: "Herringbone pattern wood flooring",
-                        caption: "Custom Flooring Pattern"
-                    }
-                ]}
+                galleryFolder="flooring-finishing"
                 faqs={[
                     {
                         question: "What type of flooring is best for high-traffic areas?",

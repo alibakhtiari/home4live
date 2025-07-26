@@ -121,38 +121,7 @@ const ServiceDemolition = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1590492324608-11f587c8e72f",
-            alt: "Interior selective demolition in progress",
-            caption: "Controlled Interior Demolition"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1643225523483-e2c434191bba",
-            alt: "Professional demolition team at work",
-            caption: "Professional Demolition Team"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1583508805133-8fd03a9916d9",
-            alt: "Kitchen demolition preparation",
-            caption: "Kitchen Demolition Phase"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1597218868981-1b68e15f0065",
-            alt: "Wall removal with structural support",
-            caption: "Structural Wall Removal"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1617799949545-fc8ae549296c",
-            alt: "Debris sorting and removal process",
-            caption: "Responsible Debris Management"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1627525287176-5178d97e2bef",
-            alt: "Post-demolition prepared site",
-            caption: "Clean Site Ready for Construction"
-          }
-        ]}
+        galleryFolder="demolition"
         faqs={[
           {
             question: "Do I need permits for demolition work?",

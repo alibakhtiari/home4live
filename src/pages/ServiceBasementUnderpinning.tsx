@@ -121,38 +121,7 @@ const ServiceBasementUnderpinning = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2",
-            alt: "Basement underpinning excavation process",
-            caption: "Professional Excavation Process"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1609617396156-4c5695963031",
-            alt: "Reinforced concrete foundation wall",
-            caption: "Foundation Reinforcement"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1581094271901-8022df4466f9",
-            alt: "Concrete pouring for basement foundation",
-            caption: "New Foundation Pouring"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828",
-            alt: "Waterproofing membrane installation",
-            caption: "Complete Waterproofing System"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1588271758625-297e6e8cf2fa",
-            alt: "Finished basement with high ceilings",
-            caption: "Completed Underpinned Basement"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-            alt: "Basement living space with large windows",
-            caption: "Transformed Living Space"
-          }
-        ]}
+        galleryFolder="basment-underpinning"
         faqs={[
           {
             question: "How much ceiling height can be added through basement underpinning?",
