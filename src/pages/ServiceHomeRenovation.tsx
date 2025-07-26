@@ -99,38 +99,7 @@ const ServiceHomeRenovation = () => {
           ]
         }
       }}
-      galleryImages={[
-        {
-          src: "https://images.unsplash.com/photo-1484154218962-a197022b5858",
-          alt: "Modern kitchen renovation with white cabinets and island",
-          caption: "Complete Kitchen Transformation"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae",
-          alt: "Luxury bathroom with freestanding tub",
-          caption: "Spa-Inspired Bathroom Remodel"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6",
-          alt: "Open concept living and dining area",
-          caption: "Open Concept Main Floor Renovation"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4",
-          alt: "Modern home office with custom shelving",
-          caption: "Custom Home Office Design"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8",
-          alt: "Elegant master bedroom renovation",
-          caption: "Master Bedroom Suite Renovation"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1600585152220-90363fe7e115",
-          alt: "Contemporary living room with custom fireplace",
-          caption: "Living Room Transformation"
-        }
-      ]}
+      galleryFolder="home-renovation"
       faqs={[
         {
           question: "How long does a typical home renovation take?",

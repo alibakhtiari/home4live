@@ -120,38 +120,8 @@ const ServiceCabinetryFixtures = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7",
-            alt: "Modern kitchen with custom cabinetry",
-            caption: "Contemporary Kitchen Cabinetry"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1",
-            alt: "Luxury bathroom vanity installation",
-            caption: "Elegant Bathroom Vanity"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224",
-            alt: "Kitchen with premium fixtures",
-            caption: "Premium Kitchen Fixtures"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1574739782594-db4ead022697",
-            alt: "Built-in cabinetry for living room",
-            caption: "Custom Built-in Cabinetry"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1645327493445-93e925de47a3",
-            alt: "Kitchen island with storage",
-            caption: "Functional Kitchen Island"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
-            alt: "Modern bathroom fixtures",
-            caption: "Contemporary Bathroom Fixtures"
-          }
-        ]}
+        galleryFolder="cabinetry-fixtures-kitchen"
+
         faqs={[
           {
             question: "What's the difference between custom, semi-custom, and stock cabinetry?",

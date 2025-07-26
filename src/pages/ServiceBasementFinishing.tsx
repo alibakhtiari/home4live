@@ -7,7 +7,7 @@ import SEO from '@/components/SEO';
 const ServiceBasementFinishing = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="Basement Finishing Services in Toronto & GTA | Home4Live"
         description="Transform your unfinished basement into a beautiful, functional living space. Professional basement finishing services throughout Toronto and the GTA."
         canonicalUrl="/services/basement-finishing"
@@ -121,70 +121,39 @@ const ServiceBasementFinishing = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da",
-            alt: "Modern finished basement living area",
-            caption: "Modern Basement Living Space"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828",
-            alt: "Basement home theater setup",
-            caption: "Custom Home Theater"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
-            alt: "Basement bathroom with modern fixtures",
-            caption: "Modern Basement Bathroom"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1605778336746-60daa9be61ca",
-            alt: "Basement bar and entertainment area",
-            caption: "Custom Bar & Entertainment Area"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9",
-            alt: "Basement home office space",
-            caption: "Productive Home Office"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1595428774223-ef52624120d2",
-            alt: "Basement play area for children",
-            caption: "Family Recreation Space"
-          }
-        ]}
-        faqs={[
-          {
-            question: "How long does it take to finish a basement?",
-            answer: "The timeline for finishing a basement depends on the size and complexity of the project. A typical basement finishing project takes 6-10 weeks from start to completion. More complex projects with custom features or those requiring structural changes might take longer. During your consultation, we'll provide a detailed timeline specific to your project."
-          },
-          {
-            question: "Should I address water issues before finishing my basement?",
-            answer: "Absolutely. Water issues must be resolved before finishing your basement to prevent damage to your new living space. Our process includes a thorough moisture assessment and, if needed, implementation of waterproofing solutions before any finishing work begins. Addressing these issues beforehand saves you from costly repairs and renovations in the future."
-          },
-          {
-            question: "Do I need permits to finish my basement?",
-            answer: "Yes, most basement finishing projects require building permits, especially if you're adding bedrooms, bathrooms, or making structural changes. Our team handles the entire permit process, ensuring your basement renovation meets all local building codes and regulations. This is crucial for both safety and future resale value of your home."
-          },
-          {
-            question: "What flooring options work best in basements?",
-            answer: "The best flooring options for basements include luxury vinyl plank (LVP), engineered hardwood, ceramic tile, and specialized basement carpeting with proper underlayment. We recommend moisture-resistant flooring materials that stand up to the slightly higher humidity typically found in basement environments. During design consultations, we'll discuss the pros and cons of each option for your specific situation."
-          },
-          {
-            question: "How much does it cost to finish a basement?",
-            answer: "Basement finishing costs in the Toronto area typically range from $35 to $75 per square foot, depending on the level of finishes, complexity, and features included. A basic basement finishing project might start around $30,000, while a high-end basement with premium features could exceed $100,000. We provide detailed, transparent quotes based on your specific requirements and design choices."
-          },
-          {
-            question: "Can a basement be converted into a legal apartment?",
-            answer: "Yes, basements can be converted into legal secondary suites or apartments, but they must meet specific building code requirements regarding ceiling height, egress windows, fire safety, separate entrances, and other factors. Our team is familiar with these requirements and can design your basement renovation to meet the standards for legal secondary suites if that's your goal."
-          }
-        ]}
-        relatedServices={[
-          "home-renovation",
-          "basement-underpinning",
-          "basement-waterproofing",
-          "kitchen-renovation"
-        ]}
+      galleryFolder="basement-finishing"
+      faqs={[
+        {
+          question: "How long does it take to finish a basement?",
+          answer: "The timeline for finishing a basement depends on the size and complexity of the project. A typical basement finishing project takes 6-10 weeks from start to completion. More complex projects with custom features or those requiring structural changes might take longer. During your consultation, we'll provide a detailed timeline specific to your project."
+        },
+        {
+          question: "Should I address water issues before finishing my basement?",
+          answer: "Absolutely. Water issues must be resolved before finishing your basement to prevent damage to your new living space. Our process includes a thorough moisture assessment and, if needed, implementation of waterproofing solutions before any finishing work begins. Addressing these issues beforehand saves you from costly repairs and renovations in the future."
+        },
+        {
+          question: "Do I need permits to finish my basement?",
+          answer: "Yes, most basement finishing projects require building permits, especially if you're adding bedrooms, bathrooms, or making structural changes. Our team handles the entire permit process, ensuring your basement renovation meets all local building codes and regulations. This is crucial for both safety and future resale value of your home."
+        },
+        {
+          question: "What flooring options work best in basements?",
+          answer: "The best flooring options for basements include luxury vinyl plank (LVP), engineered hardwood, ceramic tile, and specialized basement carpeting with proper underlayment. We recommend moisture-resistant flooring materials that stand up to the slightly higher humidity typically found in basement environments. During design consultations, we'll discuss the pros and cons of each option for your specific situation."
+        },
+        {
+          question: "How much does it cost to finish a basement?",
+          answer: "Basement finishing costs in the Toronto area typically range from $35 to $75 per square foot, depending on the level of finishes, complexity, and features included. A basic basement finishing project might start around $30,000, while a high-end basement with premium features could exceed $100,000. We provide detailed, transparent quotes based on your specific requirements and design choices."
+        },
+        {
+          question: "Can a basement be converted into a legal apartment?",
+          answer: "Yes, basements can be converted into legal secondary suites or apartments, but they must meet specific building code requirements regarding ceiling height, egress windows, fire safety, separate entrances, and other factors. Our team is familiar with these requirements and can design your basement renovation to meet the standards for legal secondary suites if that's your goal."
+        }
+      ]}
+      relatedServices={[
+        "home-renovation",
+        "basement-underpinning",
+        "basement-waterproofing",
+        "kitchen-renovation"
+      ]}
       />
     </>
   );

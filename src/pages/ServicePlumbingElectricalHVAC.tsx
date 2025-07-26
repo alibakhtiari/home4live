@@ -120,38 +120,7 @@ const ServicePlumbingElectricalHVAC = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4",
-            alt: "Plumbing installation",
-            caption: "Modern Plumbing Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1595761545806-69d3e3173522",
-            alt: "Electrical panel upgrade",
-            caption: "Electrical Panel Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1625061152282-1123525563cd",
-            alt: "HVAC installation",
-            caption: "HVAC System Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
-            alt: "Modern bathroom fixtures",
-            caption: "Premium Fixture Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1629079448081-df57f53a0628",
-            alt: "Smart home wiring",
-            caption: "Smart Home Integration"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1631545989935-863f713319f4",
-            alt: "Ductwork installation",
-            caption: "Ductwork Installation"
-          }
-        ]}
+        galleryFolder="hvac"
         faqs={[
           {
             question: "Do I need to upgrade my electrical panel during a renovation?",

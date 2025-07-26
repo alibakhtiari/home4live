@@ -15,73 +15,73 @@ const services: Service[] = [
     id: 'home-renovation',
     title: 'Home Renovation',
     description: "Complete home renovation services that transform your living spaces",
-    imageSrc: '/images/home-renovation.jpg'
+    imageSrc: 'home-renovation/1.webp'
   },
   {
     id: 'basement-underpinning',
     title: 'Basement Underpinning',
     description: "Increase your basement ceiling height and create additional living space",
-    imageSrc: '/images/basment-underpinning/1.webp'
+    imageSrc: 'basment-underpinning/1.webp'
   },
   {
     id: 'basement-waterproofing',
     title: 'Basement Waterproofing',
     description: "Professional waterproofing solutions for a dry and healthy basement",
-    imageSrc: '/images/basment-underpinning/2.webp'
+    imageSrc: 'basment-underpinning/2.webp'
   },
   {
     id: 'basement-finishing',
     title: 'Basement Finishing',
     description: "Transform your unfinished basement into a beautiful living space",
-    imageSrc: '/images/basement-finishing/1.webp'
+    imageSrc: 'basement-finishing/1.webp'
   },
   {
     id: 'house-additions',
     title: 'House Additions',
     description: "Expand your living space with custom house additions",
-    imageSrc: '/images/house-additions/1.webp'
+    imageSrc: 'house-additions/1.webp'
   },
   {
     id: 'demolition',
     title: 'Demolition',
     description: "Professional and safe demolition services",
-    imageSrc: '/images/demolition/1.webp'
+    imageSrc: 'demolition/1.webp'
   },
   {
     id: 'framing-structural',
     title: 'Framing & Structural Work',
     description: "Expert framing and structural modifications",
-    imageSrc: '/images/framing/1.webp'
+    imageSrc: 'framing/1.webp'
   },
   {
     id: 'plumbing-electrical-hvac',
     title: 'Plumbing, Electrical & HVAC',
     description: "Complete mechanical systems installation and upgrades",
-    imageSrc: '/placeholder.svg'
+    imageSrc: 'hvac/1.webp'
   },
   {
     id: 'insulation-drywall',
     title: 'Insulation & Drywall',
     description: "Professional insulation and drywall installation",
-    imageSrc: '/images/insulation-drywall-taping/1.webp'
+    imageSrc: 'insulation-drywall-taping/1.webp'
   },
   {
     id: 'flooring-finishes',
     title: 'Flooring & Finishes',
     description: "High-quality flooring installation and finishing services",
-    imageSrc: '/images/flooring/1.webp'
+    imageSrc: 'flooring/1.webp'
   },
   {
     id: 'cabinetry-fixtures',
     title: 'Cabinetry & Fixtures',
     description: "Custom cabinetry and fixture installation",
-    imageSrc: '/images/cabinetry-fixtures-kitchen/1.webp'
+    imageSrc: 'cabinetry-fixtures-kitchen/1.webp'
   },
   {
     id: 'final-touches',
     title: 'Final Touches & Clean-up',
     description: "Meticulous final touches and thorough clean-up services",
-    imageSrc: '/placeholder.svg'
+    imageSrc: 'final-touch/1.webp'
   }
 ];
 
@@ -106,7 +106,7 @@ const ServicesList = () => {
               <ServiceCard
                 title={service.title}
                 description={service.description}
-                imageSrc={service.imageSrc}
+                imageSrc={`/images/${service.imageSrc}`}
                 to={`/services/${service.id}`}
               />
             </Link>

@@ -121,38 +121,7 @@ const ServiceFoundationRepair = () => {
             ]
           }
         }}
-        galleryImages={[
-          {
-            src: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1",
-            alt: "Foundation crack repair process",
-            caption: "Professional Crack Repair"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1621271018103-052e572dcf3f",
-            alt: "Foundation wall reinforcement installation",
-            caption: "Carbon Fiber Reinforcement"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb38",
-            alt: "Waterproofing application on foundation wall",
-            caption: "Waterproofing Application"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828",
-            alt: "Excavation around foundation for repairs",
-            caption: "Exterior Foundation Repair"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc",
-            alt: "Foundation pier installation",
-            caption: "Foundation Support Installation"
-          },
-          {
-            src: "https://images.unsplash.com/photo-1582213782179-e0d4aeceebc2",
-            alt: "Completed foundation repair project",
-            caption: "Restored Foundation Integrity"
-          }
-        ]}
+        galleryFolder="foundation-repair"
         faqs={[
           {
             question: "What are the common signs of foundation problems?",
