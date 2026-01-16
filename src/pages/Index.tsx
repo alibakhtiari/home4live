@@ -20,11 +20,11 @@ const Index = () => {
     const preloadWelcomeSection = () => {
       import('@/components/sections/WelcomeSection');
     };
-    
+
     // Use requestIdleCallback if available, otherwise setTimeout
     if ('requestIdleCallback' in window) {
-      // @ts-ignore - TypeScript doesn't recognize requestIdleCallback by default
-      window.requestIdleCallback(preloadWelcomeSection);
+      const win = window as unknown as { requestIdleCallback: (cb: () => void) => void };
+      win.requestIdleCallback(preloadWelcomeSection);
     } else {
       setTimeout(preloadWelcomeSection, 200);
     }
@@ -32,7 +32,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Home4Live | Professional Home Renovation Services in Toronto & GTA"
         description="Your trusted partner for home renovations, basement waterproofing, underpinning, and more. Get expert services throughout the Greater Toronto Area."
         canonicalUrl="/"

@@ -10,7 +10,7 @@ interface SEOProps {
   ogType?: 'website' | 'article';
   twitterCard?: 'summary' | 'summary_large_image';
   keywords?: string;
-  structuredData?: Record<string, any>;
+  structuredData?: Record<string, unknown>;
 }
 
 const SEO: React.FC<SEOProps> = ({
