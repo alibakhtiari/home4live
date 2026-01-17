@@ -1,7 +1,6 @@
 import { Suspense, lazy, useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -44,40 +43,40 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Suspense fallback={<PageLoading />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/services/home-renovation" element={<ServiceHomeRenovation />} />
-                <Route path="/services/basement-underpinning" element={<ServiceBasementUnderpinning />} />
-                <Route path="/services/basement-waterproofing" element={<ServiceBasementWaterproofing />} />
-                <Route path="/services/basement-finishing" element={<ServiceBasementFinishing />} />
-                <Route path="/services/house-additions" element={<ServiceHouseAdditions />} />
-                <Route path="/services/demolition" element={<ServiceDemolition />} />
-                <Route path="/services/foundation-repair" element={<ServiceFoundationRepair />} />
-                <Route path="/services/exterior-drainage" element={<ServiceExteriorDrainage />} />
-                <Route path="/services/framing-structural" element={<ServiceFramingStructural />} />
-                <Route path="/services/plumbing-electrical-hvac" element={<ServicePlumbingElectricalHVAC />} />
-                <Route path="/services/insulation-drywall" element={<ServiceInsulationDrywall />} />
-                <Route path="/services/flooring-finishes" element={<ServiceFlooringFinishes />} />
-                <Route path="/services/cabinetry-fixtures" element={<ServiceCabinetryFixtures />} />
-                <Route path="/services/final-touches" element={<ServiceFinalTouches />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="/sitemap" element={<Sitemap />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-        </TooltipProvider>
+        <Toaster />
+
+
+        <BrowserRouter>
+          <Suspense fallback={<PageLoading />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/home-renovation" element={<ServiceHomeRenovation />} />
+              <Route path="/services/basement-underpinning" element={<ServiceBasementUnderpinning />} />
+              <Route path="/services/basement-waterproofing" element={<ServiceBasementWaterproofing />} />
+              <Route path="/services/basement-finishing" element={<ServiceBasementFinishing />} />
+              <Route path="/services/house-additions" element={<ServiceHouseAdditions />} />
+              <Route path="/services/demolition" element={<ServiceDemolition />} />
+              <Route path="/services/foundation-repair" element={<ServiceFoundationRepair />} />
+              <Route path="/services/exterior-drainage" element={<ServiceExteriorDrainage />} />
+              <Route path="/services/framing-structural" element={<ServiceFramingStructural />} />
+              <Route path="/services/plumbing-electrical-hvac" element={<ServicePlumbingElectricalHVAC />} />
+              <Route path="/services/insulation-drywall" element={<ServiceInsulationDrywall />} />
+              <Route path="/services/flooring-finishes" element={<ServiceFlooringFinishes />} />
+              <Route path="/services/cabinetry-fixtures" element={<ServiceCabinetryFixtures />} />
+              <Route path="/services/final-touches" element={<ServiceFinalTouches />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+
       </HelmetProvider>
-    </QueryClientProvider>
+    </QueryClientProvider >
   );
 };
 
