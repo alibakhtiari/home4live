@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
                 <div key={benefit.title} className="flex items-start animate-on-scroll" style={{ transitionDelay: `${(index + 1) * 0.1}s` }}>
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Check className="text-brand-teal" size={20} />
                   </div>
                   <div className="ml-3">

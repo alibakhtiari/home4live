@@ -5,7 +5,7 @@ import { HardHat, Sparkles, Home } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-linear-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute w-96 h-96 rounded-full bg-brand-teal blur-3xl -top-20 -left-20 animate-pulse"></div>
         <div className="absolute w-96 h-96 rounded-full bg-blue-500 blur-3xl -bottom-20 -right-20 animate-pulse"></div>

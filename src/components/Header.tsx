@@ -135,7 +135,7 @@ const Header = () => {
     <header className={cn(
       "transition-all duration-300 fixed w-full top-0 z-50",
       scrolled || shouldBeNonTransparent
-        ? "bg-white shadow-sm"
+        ? "bg-white shadow-xs"
         : "bg-transparent"
     )}>
       <div className="container-custom py-4">

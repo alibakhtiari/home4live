@@ -42,12 +42,12 @@ const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ steps }) => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="flex-shrink-0 relative">
+                <div className="shrink-0 relative">
                   <div className="w-20 h-20 bg-brand-teal text-white rounded-full flex items-center justify-center text-3xl font-bold relative z-10">
                     {step.number}
                   </div>
                 </div>
-                <div className={`flex-grow ${index % 2 === 0 ? 'md:text-right' : 'md:order-first'}`}>
+                <div className={`grow ${index % 2 === 0 ? 'md:text-right' : 'md:order-first'}`}>
                   <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>

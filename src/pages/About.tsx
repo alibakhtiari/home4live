@@ -54,7 +54,7 @@ const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <Gem size={28} />
               </div>
@@ -64,7 +64,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <Shield size={28} />
               </div>
@@ -74,7 +74,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <Users size={28} />
               </div>
@@ -84,7 +84,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <Clock size={28} />
               </div>
@@ -94,7 +94,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <Award size={28} />
               </div>
@@ -104,7 +104,7 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-8 rounded-lg shadow-xs border border-gray-100">
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5">
                 <BarChart size={28} />
               </div>

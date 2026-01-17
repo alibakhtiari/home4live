@@ -29,7 +29,7 @@ const ContactPage = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Phone className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
@@ -43,7 +43,7 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Mail className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
@@ -57,7 +57,7 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <MapPin className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">
@@ -67,7 +67,7 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="shrink-0 mt-1">
                     <Clock className="text-brand-teal" size={24} />
                   </div>
                   <div className="ml-4">

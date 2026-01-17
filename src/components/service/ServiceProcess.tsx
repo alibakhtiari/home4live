@@ -43,7 +43,7 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <div className="flex-shrink-0 relative">
+                <div className="shrink-0 relative">
                   <div className="w-10 h-10 bg-brand-teal text-white rounded-full flex items-center justify-center text-lg font-bold relative z-10">
                     {index + 1}
                   </div>

@@ -34,7 +34,7 @@ const ServiceFeatures: React.FC<ServiceFeaturesProps> = ({
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <div className="flex-shrink-0 mt-1">
+                <div className="shrink-0 mt-1">
                   <svg className="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>

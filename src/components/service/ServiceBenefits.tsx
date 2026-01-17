@@ -32,7 +32,7 @@ const ServiceBenefits: React.FC<ServiceBenefitsProps> = ({
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-sm"
+              className="bg-white p-6 rounded-lg shadow-xs"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

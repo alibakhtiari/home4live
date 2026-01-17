@@ -15,7 +15,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   icon
 }) => {
   return (
-    <section className="bg-gradient-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-linear-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute w-96 h-96 rounded-full bg-brand-teal blur-3xl -top-20 -left-20 animate-pulse"></div>
         <div className="absolute w-96 h-96 rounded-full bg-blue-500 blur-3xl -bottom-20 -right-20 animate-pulse"></div>
@@ -44,8 +44,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
               </a>
             </div>
           </div>
-          <div className="flex-shrink-0 flex justify-center md:w-1/4">
-            <div className="w-32 h-32 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <div className="shrink-0 flex justify-center md:w-1/4">
+            <div className="w-32 h-32 bg-white/10 backdrop-blur-xs rounded-full flex items-center justify-center">
               <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-brand-blue">
                 {icon}
               </div>

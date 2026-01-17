@@ -36,15 +36,15 @@ const HeroSection = () => {
               </Link>
             </div>
             <div className="flex flex-wrap gap-4 mt-2">
-              <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+              <div className="flex items-center bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full">
                 <Check className="text-brand-teal mr-1" size={16} />
                 <span className="text-sm">Licensed & Insured</span>
               </div>
-              <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+              <div className="flex items-center bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full">
                 <Check className="text-brand-teal mr-1" size={16} />
                 <span className="text-sm">10+ Years Experience</span>
               </div>
-              <div className="flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+              <div className="flex items-center bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full">
                 <Check className="text-brand-teal mr-1" size={16} />
                 <span className="text-sm">Free Estimates</span>
               </div>

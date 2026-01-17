@@ -60,9 +60,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                 <CollapsibleTrigger className="w-full text-left p-4 flex justify-between items-center hover:bg-gray-50">
                   <h3 className="text-lg font-medium">{faq.question}</h3>
                   {openIndex === index ? (
-                    <ChevronUp className="flex-shrink-0 text-brand-teal" />
+                    <ChevronUp className="shrink-0 text-brand-teal" />
                   ) : (
-                    <ChevronDown className="flex-shrink-0 text-gray-500" />
+                    <ChevronDown className="shrink-0 text-gray-500" />
                   )}
                 </CollapsibleTrigger>
                 <CollapsibleContent className="p-4 pt-0 text-gray-600 border-t border-gray-100">
