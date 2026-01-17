@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
 interface ServiceHeroProps {
@@ -24,11 +23,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
         <Link to="/services" className="inline-flex items-center text-white mb-8 hover:text-brand-teal transition-colors">
           <ArrowLeft size={16} className="mr-2" /> Back to All Services
         </Link>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row items-center gap-8"
+        <div
+          className="flex flex-col md:flex-row items-center gap-8 animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
         >
           <div className="md:w-3/4">
             <h1 className="text-white mb-6">{title}</h1>
@@ -51,7 +47,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
