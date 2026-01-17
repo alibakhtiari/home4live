@@ -40,7 +40,7 @@ const ResponsiveImage: React.FC<ImageProps> = ({
     const imgSrc = src.startsWith('/') ? src : `/${src}`;
     const imgExt = imgSrc.split('.').pop() || 'jpg';
     const basePath = imgSrc.substring(0, imgSrc.lastIndexOf('.'));
-    
+
     return {
       webp: `${basePath}-320.webp 320w, ${basePath}-640.webp 640w, ${basePath}-1280.webp 1280w, ${basePath}-1920.webp 1920w`,
       original: `${basePath}-320.${imgExt} 320w, ${basePath}-640.${imgExt} 640w, ${basePath}-1280.${imgExt} 1280w, ${basePath}-1920.${imgExt} 1920w`
@@ -54,13 +54,14 @@ const ResponsiveImage: React.FC<ImageProps> = ({
       <picture>
         <source type="image/webp" srcSet={srcSet.webp} sizes={sizes} />
         <source type={`image/${src.split('.').pop()}`} srcSet={srcSet.original} sizes={sizes} />
-        <img 
-          src={src} 
-          alt={alt} 
+        <img
+          src={src}
+          alt={alt}
           className={className}
           width={width}
           height={height}
           loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
         />
       </picture>
       {caption && (
