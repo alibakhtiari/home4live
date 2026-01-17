@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 interface ServiceFeaturesProps {
   title: string;
@@ -10,29 +10,29 @@ const ServiceFeatures: React.FC<ServiceFeaturesProps> = ({
   title,
   features
 }) => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
+
   return (
-    <section className="section bg-gray-50">
+    <section className="section bg-gray-50" ref={sectionRef}>
       <div className="container-custom">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
+          className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+            }`}
         >
           <h2 className="mb-4">{title}</h2>
-        </motion.div>
+        </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="flex items-start gap-3"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-start gap-3 transition-all duration-500"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateX(0)' : 'translateX(-20px)',
+                  transitionDelay: `${index * 100}ms`
+                }}
               >
                 <div className="shrink-0 mt-1">
                   <svg className="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,7 @@ const ServiceFeatures: React.FC<ServiceFeaturesProps> = ({
                   </svg>
                 </div>
                 <p className="text-gray-700">{item}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

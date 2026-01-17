@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 interface ProcessStep {
   title: string;
@@ -15,18 +15,17 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
   title,
   steps
 }) => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
+
   return (
-    <section className="section">
+    <section className="section" ref={sectionRef}>
       <div className="container-custom">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+        <div
+          className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+            }`}
         >
           <h2 className="mb-4">{title}</h2>
-        </motion.div>
+        </div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
@@ -35,13 +34,14 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
           {/* Process Steps */}
           <div className="space-y-12">
             {steps.map((step, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="flex items-center gap-8"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="flex items-center gap-8 transition-all duration-700"
+                style={{
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(50px)',
+                  transitionDelay: `${index * 200}ms`
+                }}
               >
                 <div className="shrink-0 relative">
                   <div className="w-10 h-10 bg-brand-teal text-white rounded-full flex items-center justify-center text-lg font-bold relative z-10">
@@ -52,7 +52,7 @@ const ServiceProcess: React.FC<ServiceProcessProps> = ({
                   <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

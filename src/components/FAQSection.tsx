@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
@@ -23,6 +23,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   schemaId
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { ref: sectionRef, isVisible } = useScrollReveal();
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -30,30 +31,28 @@ const FAQSection: React.FC<FAQSectionProps> = ({
 
   return (
     <section className="section bg-gray-50" id="faq">
-      <div className="container-custom">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+      <div className="container-custom" ref={sectionRef}>
+        <div
+          className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+            }`}
         >
           <h2 className="mb-4">{title}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">{subtitle}</p>
-        </motion.div>
+        </div>
 
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <motion.div 
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-4"
+              className={`mb-4 transition-all duration-700`}
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transitionDelay: `${index * 100}ms`
+              }}
             >
-              <Collapsible 
-                open={openIndex === index} 
+              <Collapsible
+                open={openIndex === index}
                 onOpenChange={() => handleToggle(index)}
                 className="border border-gray-200 rounded-lg overflow-hidden bg-white"
               >
@@ -69,12 +68,13 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                   <p>{faq.answer}</p>
                 </CollapsibleContent>
               </Collapsible>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* FAQ Schema */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: `
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",

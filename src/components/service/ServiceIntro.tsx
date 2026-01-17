@@ -1,25 +1,25 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
 interface ServiceIntroProps {
   intro: string;
 }
 
 const ServiceIntro: React.FC<ServiceIntroProps> = ({ intro }) => {
+  const { ref: sectionRef, isVisible } = useScrollReveal();
+
   return (
-    <section className="section">
+    <section className="section" ref={sectionRef}>
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div
+            className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
+              }`}
           >
             <p className="text-lg text-gray-600 leading-relaxed">
               {intro}
             </p>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
