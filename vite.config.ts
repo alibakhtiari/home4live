@@ -1,9 +1,6 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
-import { imagetools } from 'vite-imagetools';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vitejs.dev/config/
@@ -14,17 +11,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
-    imagetools({
-      defaultDirectives: new URLSearchParams(
-        'format=webp;webp;png;avif&w=1920;1280;640;320&as=picture'
-      )
-    }),
     ViteImageOptimizer({
       test: /\.(jpe?g|png|webp|avif)$/i,
-      exclude: undefined,
-      include: undefined,
       includePublic: true,
       logStats: true,
       ansiColors: true,
@@ -54,21 +42,11 @@ export default defineConfig(({ mode }) => ({
           },
         ],
       },
-      png: {
-        quality: 80,
-      },
-      jpeg: {
-        quality: 80,
-      },
-      jpg: {
-        quality: 80,
-      },
-      webp: {
-        lossless: true,
-      },
-      avif: {
-        lossless: true, 
-      },
+      png: { quality: 80 },
+      jpeg: { quality: 80 },
+      jpg: { quality: 80 },
+      webp: { lossless: true },
+      avif: { lossless: true },
     }),
   ].filter(Boolean),
   resolve: {
