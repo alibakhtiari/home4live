@@ -16,6 +16,23 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({ folder }) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [prevImages, setPrevImages] = useState(images);
+
+  if (images !== prevImages) {
+    setPrevImages(images);
+    setCurrentImage(0);
+  }
+
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [lightboxOpen]);
 
   const images = useMemo(() => {
     // Normalize folder to last segment, e.g. 'basement-finishing'
@@ -38,19 +55,15 @@ const Gallery: React.FC<GalleryProps> = ({ folder }) => {
       });
   }, [folder]);
 
-  useEffect(() => {
-    setCurrentImage(0);
-  }, [images]);
+
 
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = 'auto';
   };
 
   useEffect(() => {
