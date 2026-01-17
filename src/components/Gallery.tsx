@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { 
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -29,7 +29,7 @@ const Gallery: React.FC<GalleryProps> = ({ folder }) => {
 
     return Object.entries(modules)
       .filter(([filePath]) => filePath.includes(`/${name}/`))
-      .map(([filePath, module]) => {
+      .map(([filePath]) => {
         const filename = filePath.split('/').pop()!;
         // Construct URL to public folder
         const src = `/images/${name}/${filename}`;
@@ -105,10 +105,10 @@ const Gallery: React.FC<GalleryProps> = ({ folder }) => {
                 <img src={images[currentImage].src} alt={images[currentImage].alt} className="w-full h-auto max-h-[80vh] object-contain" />
                 <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-full flex justify-between px-4">
                   <button className="p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70" onClick={e => { e.stopPropagation(); setCurrentImage(prev => (prev === 0 ? images.length - 1 : prev - 1)); }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                   </button>
                   <button className="p-2 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70" onClick={e => { e.stopPropagation(); setCurrentImage(prev => (prev === images.length - 1 ? 0 : prev + 1)); }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                   </button>
                 </div>
               </div>

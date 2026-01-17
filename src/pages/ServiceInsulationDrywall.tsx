@@ -1,12 +1,12 @@
 import React from 'react';
 import ServicePage from '@/components/ServicePage';
 import SEO from '@/components/SEO';
-import { Layers, Ruler, Shield } from 'lucide-react';
+import { Layers } from 'lucide-react';
 
 const ServiceInsulationDrywall = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="Insulation & Drywall Services - Toronto Home Renovation"
         description="Professional insulation and drywall services for Toronto homes. Improve energy efficiency and create beautiful interior spaces with our expert installation."
         canonicalUrl="/services/insulation-drywall"

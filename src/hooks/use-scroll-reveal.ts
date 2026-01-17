@@ -10,23 +10,24 @@ export function useScrollReveal(options: IntersectionObserverInit = { threshold:
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const currentRef = ref.current;
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 setIsVisible(true);
                 // Once visible, we can stop observing if we only want one-time animation
-                if (ref.current) {
-                    observer.unobserve(ref.current);
+                if (currentRef) {
+                    observer.unobserve(currentRef);
                 }
             }
         }, options);
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [options]);

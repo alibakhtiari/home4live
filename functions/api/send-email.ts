@@ -63,7 +63,7 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: {
     }
 
     const resend = new Resend(env.RESEND_API_KEY);
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Contact Form <info@home4live.ca>',
       to: ['info@home4live.ca'],
       subject: `New Contact Form Submission - ${service}`,

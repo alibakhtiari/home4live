@@ -10,7 +10,6 @@ import {
   NavigationMenuTrigger
 } from '@/components/ui/navigation-menu';
 import { cn } from '@/lib/utils';
-import { useMediaQuery } from '@/hooks/use-media-query';
 import QuoteModal from './QuoteModal';
 
 // Array of routes where nav should not be transparent
@@ -94,7 +93,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 768px)");
+
   const location = useLocation();
 
   // Check if current route should have non-transparent nav

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -16,7 +17,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   to
 }) => {
   return (
-    <div className="flex flex-col justify-between bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group overflow-hidden">
+    <Link to={to} className="flex flex-col justify-between bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group overflow-hidden">
       <div>
         <div className="relative h-48 w-full overflow-hidden">
           <img
@@ -35,7 +36,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           Learn More <ChevronRight size={16} className="ml-1" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

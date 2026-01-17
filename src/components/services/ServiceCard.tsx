@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -18,7 +19,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   className
 }) => {
   return (
-    <div className={`flex flex-col justify-between bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group ${className}`}>
+    <Link to={link} className={`flex flex-col justify-between bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100 h-full group ${className}`}>
       <div>
         <div className="w-14 h-14 flex items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue mb-5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
           {icon}
@@ -29,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="inline-flex items-center text-brand-blue font-medium group-hover:text-brand-teal transition-colors">
         Learn More <ChevronRight size={16} className="ml-1" />
       </div>
-    </div>
+    </Link>
   );
 };
 
