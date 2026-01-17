@@ -1,7 +1,193 @@
+@import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-brand-blue: #003a16;
+  --color-brand-teal: #33cb98;
+  --color-brand-lightGray: #e2ebe1;
+  --color-brand-darkGray: #1f2937;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-in: slide-in 0.5s ease-out;
+  --animate-zoom-in: zoom-in 0.5s ease-out;
+  --animate-bounce-light: bounce-light 2s ease-in-out infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes zoom-in {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes bounce-light {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility btn-primary {
+  @apply bg-brand-teal hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+}
+
+@utility btn-secondary {
+  @apply bg-brand-blue hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+}
+
+@utility btn-outline {
+  @apply border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
+}
+
+@utility section {
+  @apply py-12 md:py-20;
+}
+
+@utility container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@utility animate-on-scroll {
+  @apply opacity-0 transition-all duration-700 ease-out;
+
+  &.animated {
+    @apply opacity-100;
+  }
+}
+
+@utility animated {
+  &.animate-on-scroll {
+    @apply opacity-100;
+  }
+}
+
+@utility service-card {
+  @apply transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg;
+}
+
+@utility animate-bounce-light {
+  animation: bounce-light 2s infinite;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
 
 @layer base {
   :root {
@@ -99,42 +285,6 @@
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-brand-teal hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
-  }
-  
-  .btn-secondary {
-    @apply bg-brand-blue hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
-  }
-  
-  .btn-outline {
-    @apply border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300;
-  }
-  
-  .section {
-    @apply py-12 md:py-20;
-  }
-  
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  
-  .animate-on-scroll {
-    @apply opacity-0 transition-all duration-700 ease-out;
-  }
-  
-  .animate-on-scroll.animated {
-    @apply opacity-100;
-  }
-  
-  .service-card {
-    @apply transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg;
-  }
-  
-  
-  .animate-bounce-light {
-    animation: bounce-light 2s infinite;
-  }
   
   @keyframes bounce-light {
     0%, 100% {
@@ -143,10 +293,6 @@
     50% {
       transform: translateY(-5px);
     }
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.3s ease-in-out;
   }
   
   @keyframes fadeIn {
