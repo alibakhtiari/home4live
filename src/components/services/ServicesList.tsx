@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import ServiceCard from './ServiceCard';
 import { ServiceProps } from '@/types/service';
@@ -40,14 +39,12 @@ const ServicesList: React.FC<ServicesListProps> = ({ services }) => {
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              <Link to={`/services/${service.id}`}>
-                <ServiceCard
-                  title={service.title}
-                  description={service.description}
-                  icon={service.icon}
-                  link={`/services/${service.id}`}
-                />
-              </Link>
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                link={`/services/${service.id}`}
+              />
             </div>
           ))}
         </div>

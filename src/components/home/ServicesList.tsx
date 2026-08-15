@@ -98,18 +98,14 @@ const ServicesList = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Link
-              key={service.id}
-              to={`/services/${service.id}`}
-              className="animate-on-scroll block h-full"
-            >
+            <div key={service.id} className="animate-on-scroll h-full">
               <ServiceCard
                 title={service.title}
                 description={service.description}
                 imageSrc={`/images/${service.imageSrc}`}
                 to={`/services/${service.id}`}
               />
-            </Link>
+            </div>
           ))}
         </div>
 
