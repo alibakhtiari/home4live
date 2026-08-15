@@ -29,8 +29,15 @@ const SEO: React.FC<SEOProps> = ({
   // Format the page title
   const pageTitle = `${title} | ${siteName}`;
 
+  // Dynamic base URL (uses current origin if available, falls back to home4live.ca)
+  const baseUrl = typeof window !== 'undefined' && window.location.origin
+    ? window.location.origin
+    : 'https://home4live.ca';
+
   // Full canonical URL
-  const fullCanonicalUrl = canonicalUrl ? `https://home4live.ca${canonicalUrl}` : undefined;
+  const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : undefined;
+
+  const fullOgImage = ogImage ? (ogImage.startsWith('http') ? ogImage : `${baseUrl}${ogImage}`) : undefined;
 
   return (
     <Helmet>
@@ -48,13 +55,13 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteName} />
       {fullCanonicalUrl && <meta property="og:url" content={fullCanonicalUrl} />}
-      {ogImage && <meta property="og:image" content={`https://home4live.ca${ogImage}`} />}
+      {fullOgImage && <meta property="og:image" content={fullOgImage} />}
 
       {/* Twitter */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
-      {ogImage && <meta name="twitter:image" content={`https://home4live.ca${ogImage}`} />}
+      {fullOgImage && <meta name="twitter:image" content={fullOgImage} />}
 
 
       {/* Structured Data / JSON-LD */}
@@ -63,15 +70,14 @@ const SEO: React.FC<SEOProps> = ({
           "@context": "https://schema.org",
           "@type": "HomeAndConstructionBusiness",
           "name": "Home4Live",
-          "image": `https://home4live.ca${ogImage}`,
-          "url": `https://home4live.ca${fullCanonicalUrl || ''}`,
-          "telephone": "+1-647-123-4567", // Default placeholder
+          "image": fullOgImage,
+          "url": fullCanonicalUrl || baseUrl,
+          "telephone": "+1 647-806-9089",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Example St", // Default placeholder
-            "addressLocality": "Toronto",
+            "streetAddress": "Richmond Hill",
+            "addressLocality": "Richmond Hill",
             "addressRegion": "ON",
-            "postalCode": "M5V 2T6",
             "addressCountry": "CA"
           },
           "priceRange": "$$$",

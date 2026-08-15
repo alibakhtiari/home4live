@@ -161,12 +161,25 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Home4Live. All rights reserved.
-            </p>
-            <div className="mt-4 md:mt-0">
-              <ul className="flex space-x-6 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+              <p className="text-gray-400 text-sm">
+                &copy; {currentYear} Home4Live. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Designed & Developed by{' '}
+                <a
+                  href="https://webabc.ir"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-brand-teal transition-colors underline-offset-2 hover:underline"
+                >
+                  webabc.ir
+                </a>
+              </p>
+            </div>
+            <div>
+              <ul className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
                 <li>
                   <Link to="/privacy-policy" className="hover:text-brand-teal transition-colors">
                     Privacy Policy
