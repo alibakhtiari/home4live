@@ -4,14 +4,15 @@ This is a web application for a home renovation and construction company at [htt
 
 ## Tech Stack
 
-- **Framework:** React
-- **Build Tool:** Vite
+- **Framework:** React 19
+- **Build Tool:** Vite 7 (with `@vitejs/plugin-react-swc` & `vite-plugin-image-optimizer`)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS & shadcn/ui
-- **Routing:** React Router
-- **Form Management:** React Hook Form
-- **State Management:** TanStack Query
-- **Linting:** ESLint
+- **Styling:** Tailwind CSS v4 & Lucide React
+- **Routing:** React Router v7
+- **Form Management:** React Hook Form & Zod
+- **SEO & Meta:** React Helmet Async
+- **Email:** Resend API
+- **Security:** Cloudflare Turnstile
 
 ## Available Scripts
 
@@ -19,38 +20,40 @@ In the project directory, you can run:
 
 ### `npm run dev`
 
-Runs the app in the development mode.
+Runs the app in development mode.
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
-
-The page will reload if you make edits.
-You will also see any lint errors in the console.
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder with image optimization.
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+### `npm run build:dev`
 
-### `npm run lint`
-
-Lints the project files for any errors.
+Builds the app using development mode flags.
 
 ### `npm run preview`
 
 Serves the production build locally for preview.
 
+### `npm run lint`
+
+Runs ESLint across the codebase.
+
 ## Installation and Setup
 
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/alibakhtiari/home4live.git
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
-    cd home4live
-    ```
-3.  **Install dependencies:**
-    ```sh
-    npm install
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/alibakhtiari/home4live.git
+   ```
+2. **Navigate to the project directory:**
+   ```sh
+   cd home4live
+   ```
+3. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+4. **Start the dev server:**
+   ```sh
+   npm run dev
+   ```
