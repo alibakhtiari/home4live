@@ -4,7 +4,7 @@ import { HardHat, Sparkles, Home } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-linear-to-r from-brand-blue to-blue-800 py-16 md:py-24 relative overflow-hidden">
+    <section className="bg-linear-to-r from-brand-blue to-blue-800 pt-28 pb-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div className="absolute w-96 h-96 rounded-full bg-brand-teal blur-3xl -top-20 -left-20 animate-pulse"></div>
         <div className="absolute w-96 h-96 rounded-full bg-blue-500 blur-3xl -bottom-20 -right-20 animate-pulse"></div>
@@ -13,8 +13,8 @@ const HeroSection = () => {
         <div
           className="animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
         >
-          <h1 className="text-white mb-6">Transforming Toronto Homes</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-10">
+          <h1 className="text-white mb-6 text-3xl md:text-5xl">Transforming Toronto Homes</h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10">
             Comprehensive renovation and construction services tailored to your vision,
             delivered with precision and excellence
           </p>

@@ -8,10 +8,10 @@ const AboutPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-brand-blue py-16 md:py-24">
+      <section className="bg-brand-blue pt-28 pb-16 md:py-24">
         <div className="container-custom text-center">
-          <h1 className="text-white mb-4">About Home4Live</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <h1 className="text-white mb-4 text-3xl md:text-5xl">About Home4Live</h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             Dedicated to transforming your living spaces with exceptional craftsmanship and personalized service
           </p>
         </div>
@@ -21,10 +21,12 @@ const AboutPage = () => {
       <section className="section">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-gray-200 h-[400px] rounded-lg flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-gray-500 italic">Image Placeholder - Team or company image</p>
-              </div>
+            <div className="h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+              <img
+                src="/images/about-team.jpg"
+                alt="Home4Live Expert Team Reviewing Architectural Plans"
+                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+              />
             </div>
             
             <div>

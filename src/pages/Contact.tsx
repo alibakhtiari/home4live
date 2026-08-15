@@ -8,10 +8,10 @@ const ContactPage = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-brand-blue py-16 md:py-24">
+      <section className="bg-brand-blue pt-28 pb-16 md:py-24">
         <div className="container-custom text-center">
-          <h1 className="text-white mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+          <h1 className="text-white mb-4 text-3xl md:text-5xl">Contact Us</h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             We're here to answer your questions and discuss your renovation project
           </p>
         </div>
@@ -100,11 +100,18 @@ const ContactPage = () => {
             </p>
           </div>
           
-          <div className="bg-gray-300 h-[400px] rounded-lg flex items-center justify-center">
-            <div className="text-center p-8">
-              <p className="text-gray-600 italic">Google Map Placeholder</p>
-              <p className="text-gray-600">Richmond Hill, ON, Canada</p>
-            </div>
+          <div className="h-[420px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe
+              title="Home4Live Location - Richmond Hill, ON, Canada"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92048.96634898124!2d-79.52187760773669!3d43.882838382747125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2b2b1d3ef37f%3A0xb36b568393e1176b!2sRichmond%20Hill%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
           </div>
         </div>
       </section>
